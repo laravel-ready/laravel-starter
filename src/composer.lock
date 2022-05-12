@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1fce94cbd52f7d90fa47a4dd1ae79bd",
+    "content-hash": "9c460cda0743b001f17c39d6c8698424",
     "packages": [
         {
             "name": "brick/math",
@@ -892,6 +892,67 @@
                 }
             ],
             "time": "2022-03-20T21:55:58+00:00"
+        },
+        {
+            "name": "laravel-ready/readable-numbers",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-ready/readable-numbers.git",
+                "reference": "c0d5b40d5082c149104ae748a1c409818a15ea62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-ready/readable-numbers/zipball/c0d5b40d5082c149104ae748a1c409818a15ea62",
+                "reference": "c0d5b40d5082c149104ae748a1c409818a15ea62",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^9.0",
+                "php": "^8.0.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^7.0.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelReady\\ReadableNumbers\\ReadableNumbersServiceProvider"
+                    ],
+                    "aliases": {
+                        "ReadableNumbers": "LaravelReady\\ReadableNumbers\\Facades\\ReadableNumbers"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelReady\\ReadableNumbers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "EgoistDeveloper",
+                    "email": "epsilonelittr@gmail.com"
+                }
+            ],
+            "description": "Human readable numbers for Laravel",
+            "keywords": [
+                "human readable numbers",
+                "laravel",
+                "readable numbers"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel-ready/readable-numbers/issues",
+                "source": "https://github.com/laravel-ready/readable-numbers"
+            },
+            "time": "2022-04-22T23:19:39+00:00"
         },
         {
             "name": "laravel/framework",
