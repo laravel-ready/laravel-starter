@@ -4,8 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21983e5ad4c0b03afb2ac78b639986b9",
+    "content-hash": "616a153dd4f76a1a63493a0254a50aee",
     "packages": [
+        {
+            "name": "biiiiiigmonster/hasin",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/biiiiiigmonster/hasin.git",
+                "reference": "118d0842d32ccf5e7a815a348fd2635b28685c44"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/biiiiiigmonster/hasin/zipball/118d0842d32ccf5e7a815a348fd2635b28685c44",
+                "reference": "118d0842d32ccf5e7a815a348fd2635b28685c44",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">=9"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BiiiiiigMonster\\Hasin\\HasinServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BiiiiiigMonster\\Hasin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "YunFeng Lu",
+                    "email": "603707288@qq.com"
+                }
+            ],
+            "description": "Laravel framework relation has in implement",
+            "keywords": [
+                "laravel",
+                "orm",
+                "relation",
+                "whereHas"
+            ],
+            "support": {
+                "issues": "https://github.com/biiiiiigmonster/hasin/issues",
+                "source": "https://github.com/biiiiiigmonster/hasin/tree/v2.0.0"
+            },
+            "time": "2022-05-12T09:18:43+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.9.3",
