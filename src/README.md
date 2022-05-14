@@ -15,4 +15,5 @@ Batteries included ready to use development environment for Laravel.
 
 - Support
   - [readable-numbers](https://github.com/laravel-ready/readable-numbers): Human readable numbers.
+  - [ultimate-support](https://github.com/laravel-ready/ultimate-support): Useful helper collection.
   - [hasin](https://github.com/biiiiiigmonster/hasin): The 'hasin' is 'Relation Mixin' of 'Laravel ORM'. Replacement for some `has` and `whereHas` cases.

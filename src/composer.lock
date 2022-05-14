@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "616a153dd4f76a1a63493a0254a50aee",
+    "content-hash": "9fc00384bf1d851444f8e006504f7c09",
     "packages": [
         {
             "name": "biiiiiigmonster/hasin",
@@ -1006,6 +1006,67 @@
                 "source": "https://github.com/laravel-ready/readable-numbers"
             },
             "time": "2022-04-22T23:19:39+00:00"
+        },
+        {
+            "name": "laravel-ready/ultimate-support",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-ready/ultimate-support.git",
+                "reference": "bb17ad89d658af4c0e62ced7ca4d2c519963281f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-ready/ultimate-support/zipball/bb17ad89d658af4c0e62ced7ca4d2c519963281f",
+                "reference": "bb17ad89d658af4c0e62ced7ca4d2c519963281f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^9.0",
+                "php": "^8.0.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^7.0.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelReady\\UltimateSupport\\UltimateSupportServiceProvider"
+                    ],
+                    "aliases": {
+                        "UltimateSupport": "LaravelReady\\UltimateSupport\\Facades\\UltimateSupport"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelReady\\UltimateSupport\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "EgoistDeveloper",
+                    "email": "epsilonelittr@gmail.com"
+                }
+            ],
+            "description": "A few useful reusable support package for Laravel",
+            "keywords": [
+                "laravel",
+                "support",
+                "ultimate-support"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel-ready/ultimate-support/issues",
+                "source": "https://github.com/laravel-ready/ultimate-support"
+            },
+            "time": "2022-05-14T15:34:48+00:00"
         },
         {
             "name": "laravel/framework",
