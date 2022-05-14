@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 
 use Database\Seeders\User\DefaultUserSeeder;
 
-class DatabaseSeeder extends Seeder
+class ProductionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,8 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            // add seeder classes here
-            // DefaultUserSeeder::class,
+            DefaultUserSeeder::class,
         ]);
     }
 }
