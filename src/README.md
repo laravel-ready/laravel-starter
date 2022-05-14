@@ -2,6 +2,54 @@
 
 Batteries included ready to use development environment for Laravel.
 
+## Artisan Commands
+
+
+```bash
+# serve app
+
+php artisan serve --port=8000
+```
+
+```bash
+# quick start
+
+php artisan make:model Folder/ModelName -a
+```
+
+```bash
+# quick start
+
+php artisan make:model Folder/ModelName -a
+```
+
+```bash
+# create factory and seeder
+
+php artisan make:factory Folder/ModelNameFactory
+php artisan make:seeder Folder/ModelNameSeeder
+
+
+# then seed the database
+php artisan db:seed
+
+# or run see specific seeder
+php artisan db:seed --class=Database\Seeders\Folder\SeedTheSeeder
+```
+
+```bash
+# seed for development
+php artisan db:seed --class=DevelopmentSeeder
+
+# seed for production
+php artisan db:seed --class=ProductionSeeder
+```
+
+```bash
+# composer autoload optimization
+
+composer dump-autoload -o
+```
 
 ## Preinstalled packages
 
