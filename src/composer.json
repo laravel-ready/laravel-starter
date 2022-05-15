@@ -16,6 +16,7 @@
         "spatie/laravel-data": "^1.4"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.6",
         "dragon-code/pretty-routes": "^3.2",
         "fakerphp/faker": "^1.9.1",
         "itsgoingd/clockwork": "^5.1",

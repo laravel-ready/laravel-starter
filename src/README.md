@@ -56,6 +56,8 @@ composer dump-autoload -o
 - [clockwork](https://github.com/itsgoingd/clockwork): Modern debugging tool for Laravel. (debugbar alternative)
   - Navigate to `/clockwork` in your browser.
 
+- [debugbar](https://github.com/barryvdh/laravel-debugbar): In UI, see app metrics and logs.
+
 - [routes](https://github.com/TheDragonCode/pretty-routes): List all routes in one UI.
   - Navigate to `/routes` in your browser.
 
