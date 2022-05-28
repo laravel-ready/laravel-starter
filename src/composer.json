@@ -14,7 +14,8 @@
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "spatie/laravel-data": "^1.4"
+        "spatie/laravel-data": "^1.4",
+        "spatie/laravel-ignition": "1.2.3"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
@@ -24,8 +25,7 @@
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
-        "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0"
+        "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
         "psr-4": {
