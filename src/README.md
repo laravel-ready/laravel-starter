@@ -27,6 +27,7 @@ Batteries included ready to use development environment for Laravel.
 - Code Analysis
   - [larastan](https://github.com/nunomaduro/larastan): Adds code analysis to Laravel improving developer productivity and code quality (PHPStan wrapper).
   - [pint](https://github.com/laravel/pint): PHP code style fixer (PHP-CS Fixer wrapper).
+  - [pest](https://github.com/pestphp/pest): Pest is an elegant PHP Testing Framework with a focus on simplicity.
 
 ## Artisan Commands
 
@@ -104,8 +105,22 @@ See full config list and examples [here](https://mlocati.github.io/php-cs-fixer-
   <summary>Click to see pint commands</summary>
 
 ```bash
-# analyze code
+# check and fix code style
 
 php ./vendor/bin/pint -v
+```
+</details>
+
+## Pest Commands
+
+See more examples abouts pesting [here](https://pestphp.com/docs/writing-tests).
+
+<details>
+  <summary>Click to see pest commands</summary>
+
+```bash
+# run tests
+
+php ./vendor/bin/pest
 ```
 </details>
