@@ -2,7 +2,7 @@
 
 Batteries included ready to use development environment for Laravel.
 
-## Preinstalled packages
+## Preinstalled laravel packages
 
 - [clockwork](https://github.com/itsgoingd/clockwork): Modern debugging tool for Laravel. (debugbar alternative)
   - Navigate to `/clockwork` in your browser.
@@ -28,6 +28,11 @@ Batteries included ready to use development environment for Laravel.
   - [larastan](https://github.com/nunomaduro/larastan): Adds code analysis to Laravel improving developer productivity and code quality (PHPStan wrapper).
   - [pint](https://github.com/laravel/pint): PHP code style fixer (PHP-CS Fixer wrapper).
   - [pest](https://github.com/pestphp/pest): Pest is an elegant PHP Testing Framework with a focus on simplicity.
+
+## Preinstalled mix packages
+
+- [browser-sync](https://github.com/Browsersync/browser-sync): Keep multiple browsers & devices in sync when building apps.
+  - First, you must run `php artisan serve` to start the server. Then run `npm run watch` to watch for changes. Browsersync listens to laravel app 8000 port and exposes it to your browser at `localhost:3000` and Browsersync UI `localhost:3001` ports.
 
 ## Artisan Commands
 
