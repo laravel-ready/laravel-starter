@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-
-use Database\Seeders\User\UserDevSeeder;
 use Database\Seeders\User\DefaultUserSeeder;
+use Database\Seeders\User\UserDevSeeder;
+use Illuminate\Database\Seeder;
 
 class DevelopmentSeeder extends Seeder
 {

@@ -2,10 +2,8 @@
 
 namespace Database\Seeders\User;
 
-use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
 use App\Models\User;
+use Illuminate\Database\Seeder;
 
 class UserDevSeeder extends Seeder
 {

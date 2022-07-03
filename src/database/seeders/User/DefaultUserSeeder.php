@@ -2,10 +2,8 @@
 
 namespace Database\Seeders\User;
 
-use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
 use App\Models\User;
+use Illuminate\Database\Seeder;
 
 class DefaultUserSeeder extends Seeder
 {
@@ -21,7 +19,7 @@ class DefaultUserSeeder extends Seeder
         if (User::count() === 0) {
             $user = User::where(['email' => $defaultUser])->first();
 
-            if (!$user) {
+            if (! $user) {
                 User::factory()->count(1)->create([
                     'name' => 'Administrator',
                     'email' => $defaultUser,
