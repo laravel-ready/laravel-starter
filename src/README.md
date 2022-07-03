@@ -24,8 +24,13 @@ Batteries included ready to use development environment for Laravel.
   - [ultimate-support](https://github.com/laravel-ready/ultimate-support): Useful helper collection.
   - [hasin](https://github.com/biiiiiigmonster/hasin): The 'hasin' is 'Relation Mixin' of 'Laravel ORM'. Replacement for some `has` and `whereHas` cases.
 
+- Code Analysis
+  - [larastan](https://github.com/nunomaduro/larastan): Adds code analysis to Laravel improving developer productivity and code quality.
 
 ## Artisan Commands
+
+<details>
+  <summary>Click to see artisan commands</summary>
 
 ```bash
 # serve app
@@ -72,3 +77,20 @@ php artisan db:seed --class=ProductionSeeder
 
 composer dump-autoload -o
 ```
+
+</details>
+
+
+## Larastan Commands
+
+<details>
+  <summary>Click to see larastan commands</summary>
+
+To ignore specific lines of code, add the following [comments](https://github.com/nunomaduro/larastan#ignoring-errors) to your code.
+
+```bash
+# analyze code
+
+php ./vendor/bin/phpstan analyse --memory-limit=2G --level=9
+```
+</details>
