@@ -84,10 +84,10 @@ composer dump-autoload -o
 
 ## Larastan Commands
 
+To ignore specific lines of code, add the following [comments](https://github.com/nunomaduro/larastan#ignoring-errors) to your code.
+
 <details>
   <summary>Click to see larastan commands</summary>
-
-To ignore specific lines of code, add the following [comments](https://github.com/nunomaduro/larastan#ignoring-errors) to your code.
 
 ```bash
 # analyze code
@@ -98,10 +98,10 @@ php ./vendor/bin/phpstan analyse --memory-limit=2G --level=9
 
 ## Pint Commands
 
+See full config list and examples [here](https://mlocati.github.io/php-cs-fixer-configurator/#version:3.8).
+
 <details>
   <summary>Click to see pint commands</summary>
-
-To ignore specific lines of code, add the following [comments](https://github.com/nunomaduro/larastan#ignoring-errors) to your code.
 
 ```bash
 # analyze code
