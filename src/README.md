@@ -25,7 +25,8 @@ Batteries included ready to use development environment for Laravel.
   - [hasin](https://github.com/biiiiiigmonster/hasin): The 'hasin' is 'Relation Mixin' of 'Laravel ORM'. Replacement for some `has` and `whereHas` cases.
 
 - Code Analysis
-  - [larastan](https://github.com/nunomaduro/larastan): Adds code analysis to Laravel improving developer productivity and code quality.
+  - [larastan](https://github.com/nunomaduro/larastan): Adds code analysis to Laravel improving developer productivity and code quality (PHPStan wrapper).
+  - [pint](https://github.com/laravel/pint): PHP code style fixer (PHP-CS Fixer wrapper).
 
 ## Artisan Commands
 
@@ -92,5 +93,19 @@ To ignore specific lines of code, add the following [comments](https://github.co
 # analyze code
 
 php ./vendor/bin/phpstan analyse --memory-limit=2G --level=9
+```
+</details>
+
+## Pint Commands
+
+<details>
+  <summary>Click to see pint commands</summary>
+
+To ignore specific lines of code, add the following [comments](https://github.com/nunomaduro/larastan#ignoring-errors) to your code.
+
+```bash
+# analyze code
+
+php ./vendor/bin/pint -v
 ```
 </details>

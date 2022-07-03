@@ -22,6 +22,7 @@
         "dragon-code/pretty-routes": "^3.2",
         "fakerphp/faker": "^1.9.1",
         "itsgoingd/clockwork": "^5.1",
+        "laravel/pint": "^0.2.2",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
