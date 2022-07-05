@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  # Laravel App X
+  laravel_app_x:
+    build:
+      context: ./src
+    container_name: laravel_app_x
+    restart: unless-stopped
+    ports:
+      - ${LARAVEL_APP_X_PORT}:8000
+    volumes:
+      - ./src:/var/www/html
+    environment:
+      RUN_LARAVEL_AUTOMATIONS: "true"
+    command: php -S laravel_app_x:8000 -t ./public
+    networks:
+      - mysql_net
+      - redis_net
+
+  # MySQL
+  laravel_mysql_db:
+    image: mysql:latest
+    container_name: laravel_mysql_db
+    restart: unless-stopped
+    ports:
+      - ${MYSQL_PORT}:3306
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DB}
+      ON_CREATE_DB: ${MYSQL_DB}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+      - mysql_net
+
+  # Redis
+  laravel_redis:
+    image: redis:alpine
+    container_name: laravel_redis
+    hostname: laravel_app_x
+    restart: always
+    ports:
+      - ${LARAVEL_REDIS_POST}:6379
+    networks:
+      - redis_net
+
+networks:
+  mysql_net:
+    driver: bridge
+
+  redis_net:
+    driver: bridge
