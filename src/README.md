@@ -4,11 +4,6 @@ Batteries included ready to use development environment for Laravel.
 
 ## Preinstalled laravel packages
 
-- [clockwork](https://github.com/itsgoingd/clockwork): Modern debugging tool for Laravel. (debugbar alternative)
-  - Navigate to `/clockwork` in your browser.
-
-- [debugbar](https://github.com/barryvdh/laravel-debugbar): In UI, see app metrics and logs.
-
 - [routes](https://github.com/TheDragonCode/pretty-routes): List all routes in one UI.
   - Navigate to `/routes` in your browser.
 
@@ -18,6 +13,14 @@ Batteries included ready to use development environment for Laravel.
 - [laravel-data](https://github.com/spatie/laravel-data): Powerful data objects for Laravel.
 
 - [spatie/laravel-ignition](https://github.com/spatie/laravel-ignition): Better error page layout.
+
+- Debugging
+  - [clockwork](https://github.com/itsgoingd/clockwork): Modern debugging tool for Laravel. (debugbar alternative)
+    - Navigate to `/clockwork` in your browser.
+
+  - [debugbar](https://github.com/barryvdh/laravel-debugbar): In UI, see app metrics and logs.
+
+  - [laravel-ray](https://github.com/spatie/laravel-ray): Debug with Ray to fix problems faster in Laravel apps. It requires **[ray app](https://myray.app/)** (paid app).
 
 - Support
   - [readable-numbers](https://github.com/laravel-ready/readable-numbers): Human readable numbers.
