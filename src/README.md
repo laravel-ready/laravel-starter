@@ -4,7 +4,7 @@ Batteries included ready to use development environment for Laravel.
 
 ## Preinstalled laravel packages
 
-- [routes](https://github.com/TheDragonCode/pretty-routes): List all routes in one UI.
+- [pretty-routes](https://github.com/TheDragonCode/pretty-routes): List all routes in one UI.
   - Navigate to `/routes` in your browser.
 
 - [LogViewer](https://github.com/ARCANEDEV/LogViewer): View Laravel logs in one UI.
