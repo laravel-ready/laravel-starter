@@ -14,6 +14,9 @@ Batteries included ready to use development environment for Laravel.
 
 - [spatie/laravel-ignition](https://github.com/spatie/laravel-ignition): Better error page layout.
 
+- [saleem-hadad/larecipe](https://github.com/saleem-hadad/larecipe): Write documentation via Markdown inside your Laravel App.
+  - Navigate to `/docs` in your browser.
+
 - Debugging
   - [clockwork](https://github.com/itsgoingd/clockwork): Modern debugging tool for Laravel. (debugbar alternative)
     - Navigate to `/clockwork` in your browser.
