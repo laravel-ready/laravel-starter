@@ -8,6 +8,7 @@
         "php": "^8.0.2",
         "arcanedev/log-viewer": "^9.0",
         "biiiiiigmonster/hasin": "^2.0",
+        "binarytorch/larecipe": "^2.5",
         "guzzlehttp/guzzle": "^7.2",
         "laravel-ready/readable-numbers": "^1.0",
         "laravel-ready/ultimate-support": "^1.0",
