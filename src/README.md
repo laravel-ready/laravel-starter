@@ -36,6 +36,11 @@ Batteries included ready to use development environment for Laravel.
   - [pint](https://github.com/laravel/pint): PHP code style fixer (PHP-CS Fixer wrapper).
   - [pest](https://github.com/pestphp/pest): Pest is an elegant PHP Testing Framework with a focus on simplicity.
 
+## Languages
+
+- en: native/default
+- [tr](https://github.com/EgoistDeveloper/laravel-turkish-translations)
+
 ## Preinstalled mix packages
 
 - [browser-sync](https://github.com/Browsersync/browser-sync): Keep multiple browsers & devices in sync when building apps.
