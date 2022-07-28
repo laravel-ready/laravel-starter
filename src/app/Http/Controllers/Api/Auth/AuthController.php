@@ -21,10 +21,10 @@ class AuthController extends ApiController
      * Login user with credentials
      *
      * @param UserLoginRequest $request
+     * @return array|Response
      * @throws ValidationException
-     * @return array
      */
-    public function login(UserLoginRequest $request): array
+    public function login(UserLoginRequest $request): array|Response
     {
         $clientUserAgent = $request->header('User-Agent');
 
@@ -69,7 +69,7 @@ class AuthController extends ApiController
      * Register new user
      *
      * @param UserRegisterRequest $request
-     * @return bool[]|Response
+     * @return array|Response
      * @throws ValidationException
      */
     public function register(UserRegisterRequest $request): array|Response
@@ -95,9 +95,9 @@ class AuthController extends ApiController
      * Logout on this device
      *
      * @param Request $request
-     * @return bool[]
+     * @return array|Response
      */
-    public function logout(Request $request): array
+    public function logout(Request $request): array|Response
     {
         $clientUserAgent = $request->header('User-Agent');
 
