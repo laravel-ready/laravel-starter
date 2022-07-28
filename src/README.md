@@ -12,7 +12,7 @@ Batteries included ready to use development environment for Laravel.
 
 - [laravel-data](https://github.com/spatie/laravel-data): Powerful data objects for Laravel.
 
-- [spatie/laravel-ignition](https://github.com/spatie/laravel-ignition): Better error page layout.
+- [spatie/laravel-ignition](https://github.com/spatie/laravel-ignition): Better error page layout. (packageist: *binarytorch/larecipe*)
 
 - [saleem-hadad/larecipe](https://github.com/saleem-hadad/larecipe): Write documentation via Markdown inside your Laravel App.
   - First, you must run `php artisan larecipe:install` command to publish the needed assets and configurations. 
