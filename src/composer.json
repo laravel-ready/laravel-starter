@@ -2,7 +2,10 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
@@ -23,7 +26,7 @@
         "dragon-code/pretty-routes": "^3.2",
         "fakerphp/faker": "^v1.9.2",
         "itsgoingd/clockwork": "^5.1",
-        "laravel/pint": "^v1.0.0",
+        "laravel/pint": "^v1.1.0",
         "laravel/sail": "^v1.15.0",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
