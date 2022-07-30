@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $targetCount = 1000;
+        $targetCount = 100;
 
         if (User::count() < $targetCount) {
             User::factory()->count($targetCount)->create();
