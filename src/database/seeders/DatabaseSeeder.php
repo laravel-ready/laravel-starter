@@ -12,11 +12,12 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-        $this->call([
-            // add seeder classes here
-            // DefaultUserSeeder::class,
-        ]);
+        if (!$this->container->isProduction()) {
+            $this->call([DevSeeder::class]);
+        } else {
+            $this->call([ProdSeeder::class]);
+        }
     }
 }
