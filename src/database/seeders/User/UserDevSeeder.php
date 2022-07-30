@@ -12,7 +12,7 @@ class UserDevSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         $targetCount = 1000;
 
