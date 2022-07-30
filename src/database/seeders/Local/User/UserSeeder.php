@@ -1,11 +1,11 @@
 <?php
 
-namespace Database\Seeders\User;
+namespace Database\Seeders\Local\User;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
-class UserDevSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.

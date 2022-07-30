@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders\User;
+namespace Database\Seeders\Local\User;
 
 use App\Models\User;
 

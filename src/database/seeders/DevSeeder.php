@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use Database\Seeders\User\DefaultUserSeeder;
-use Database\Seeders\User\UserDevSeeder;
+use Database\Seeders\Local\User\DefaultUserSeeder;
+use Database\Seeders\Local\User\UserSeeder;
 use Illuminate\Database\Seeder;
 
-class DevelopmentSeeder extends Seeder
+class DevSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +17,7 @@ class DevelopmentSeeder extends Seeder
     {
         $this->call([
             DefaultUserSeeder::class,
-            UserDevSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }

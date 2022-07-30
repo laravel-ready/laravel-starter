@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use Database\Seeders\User\DefaultUserSeeder;
 use Illuminate\Database\Seeder;
 
-class ProductionSeeder extends Seeder
+class ProdSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +14,7 @@ class ProductionSeeder extends Seeder
     public function run()
     {
         $this->call([
-            DefaultUserSeeder::class,
+            // DefaultUserSeeder::class,
         ]);
     }
 }
