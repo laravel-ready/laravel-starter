@@ -21,7 +21,7 @@ abstract class BaseRepository
     protected Application $app;
 
     /**
-     * @param Application $app
+     * @param  Application  $app
      *
      * @throws \Exception
      */
@@ -49,14 +49,14 @@ abstract class BaseRepository
      * Make Model instance
      *
      * @return Model
-     * @throws \Exception
      *
+     * @throws \Exception
      */
     public function makeModel(): Model
     {
         $model = $this->app->make($this->model());
 
-        if (!$model instanceof Model) {
+        if (! $model instanceof Model) {
             throw new \Exception("Class {$this->model()} must be an instance of Illuminate\\Database\\Eloquent\\Model");
         }
 
@@ -66,8 +66,8 @@ abstract class BaseRepository
     /**
      * Paginate records for scaffold.
      *
-     * @param int $perPage
-     * @param array $columns
+     * @param  int  $perPage
+     * @param  array  $columns
      * @return LengthAwarePaginator
      */
     public function paginate(int $perPage, array $columns = ['*']): LengthAwarePaginator
@@ -80,9 +80,9 @@ abstract class BaseRepository
     /**
      * Build a query for retrieving all records.
      *
-     * @param array $search
-     * @param int|null $skip
-     * @param int|null $limit
+     * @param  array  $search
+     * @param  int|null  $skip
+     * @param  int|null  $limit
      * @return Builder
      */
     public function allQuery(array $search = [], int $skip = null, int $limit = null): Builder
@@ -97,11 +97,11 @@ abstract class BaseRepository
             }
         }
 
-        if (!is_null($skip)) {
+        if (! is_null($skip)) {
             $query->skip($skip);
         }
 
-        if (!is_null($limit)) {
+        if (! is_null($limit)) {
             $query->limit($limit);
         }
 
@@ -111,11 +111,10 @@ abstract class BaseRepository
     /**
      * Retrieve all records with given filter criteria
      *
-     * @param array $search
-     * @param int|null $skip
-     * @param int|null $limit
-     * @param array $columns
-     *
+     * @param  array  $search
+     * @param  int|null  $skip
+     * @param  int|null  $limit
+     * @param  array  $columns
      * @return LengthAwarePaginator|Builder[]|Collection
      */
     public function all(array $search = [], int $skip = null, int $limit = null, array $columns = ['*']): Collection|LengthAwarePaginator|array
@@ -128,8 +127,7 @@ abstract class BaseRepository
     /**
      * Create model record
      *
-     * @param array $input
-     *
+     * @param  array  $input
      * @return Model
      */
     public function create(array $input): Model
@@ -144,9 +142,8 @@ abstract class BaseRepository
     /**
      * Find model record for given id
      *
-     * @param int $id
-     * @param array $columns
-     *
+     * @param  int  $id
+     * @param  array  $columns
      * @return Builder|Builder[]|Collection|Model|null
      */
     public function find(int $id, array $columns = ['*']): Model|Collection|Builder|array|null
@@ -159,9 +156,8 @@ abstract class BaseRepository
     /**
      * Update model record for given id
      *
-     * @param array $input
-     * @param int $id
-     *
+     * @param  array  $input
+     * @param  int  $id
      * @return Builder|Builder[]|Collection|Model
      */
     public function update(array $input, int $id): Model|Collection|Builder|array
@@ -178,11 +174,10 @@ abstract class BaseRepository
     }
 
     /**
-     * @param int $id
-     *
+     * @param  int  $id
      * @return bool|mixed|null
-     * @throws \Exception
      *
+     * @throws \Exception
      */
     public function delete(int $id): mixed
     {

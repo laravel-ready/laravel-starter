@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Database\Seeders\User\DefaultUserSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        if (!$this->container->isProduction()) {
+        if (! $this->container->isProduction()) {
             $this->call([DevSeeder::class]);
         } else {
             $this->call([ProdSeeder::class]);

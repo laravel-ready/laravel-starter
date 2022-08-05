@@ -3,7 +3,6 @@
 namespace Database\Seeders\Local\User;
 
 use App\Models\User;
-
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -31,7 +30,7 @@ class DefaultUserSeeder extends Seeder
                 'email' => 'user@example.com',
                 'name' => 'User Muser',
                 // 'username' => 'userMuser',
-            ]
+            ],
         ];
 
         foreach ($defaultUsers as $user) {
