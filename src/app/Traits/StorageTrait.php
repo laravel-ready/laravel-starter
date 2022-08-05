@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use Exception;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
@@ -10,12 +11,13 @@ trait StorageTrait
     /**
      * Save a file to the storage.
      *
-     * @param  object  $file
-     * @param  string  $path
-     * @param  string  $fileName
+     * @param object $file
+     * @param string $folder
+     * @param string $fileName
+     * @param string $disk
      * @return bool|string
      */
-    public function saveFileToDisk($file, $folder, $fileName, $disk = 'public'): bool|string
+    public function saveFileToDisk(object $file, string $folder, string $fileName, string $disk = 'public'): bool|string
     {
         $ext = $file->getClientOriginalExtension();
         $fullFilePath = "{$folder}/{$fileName}.{$ext}";
@@ -31,9 +33,9 @@ trait StorageTrait
     /**
      * Move a file on disk
      *
-     * @param  object  $file
-     * @param  string  $path
-     * @param  string  $fileName
+     * @param string $filePath
+     * @param string $newPath
+     * @param string $disk
      * @return bool|string
      */
     public function moveFileOnDisk(string $filePath, string $newPath, string $disk = 'public'): bool|string
@@ -80,9 +82,11 @@ trait StorageTrait
     /**
      * Get a file from the storage.
      *
-     * @param  string  $filePath
-     * @param  string  $disk
+     * @param string $filePath
+     * @param string $fileName
+     * @param string $disk
      * @return StreamedResponse
+     * @throws Exception
      */
     public function downloadFileFromDisk(string $filePath, string $fileName, string $disk = 'public'): StreamedResponse
     {
@@ -94,6 +98,6 @@ trait StorageTrait
             return Storage::disk($disk)->download($filePath, $fileName, $headers);
         }
 
-        // TODO: add exception
+        throw new Exception('File not found');
     }
 }
