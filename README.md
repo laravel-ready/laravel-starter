@@ -12,6 +12,10 @@ This project comes with a docker stack for laravel. It contains: [Dockerfile](ht
 
 `docker-compose.yml` use `.env` file for configurations. So, you need to rename `.env-example` to `.env` and fill it with your own credentials. Then you can run `docker-compose up -d` to start the stack.
 
+## 👍 Suggested Tools
+
+- Use [command aliases](https://github.com/EgoistDeveloper/dev-aliases) to save time and make your development environment more comfortable.
+
 ## 💧 Versioning
 
 This project follows laravel major versioning and every minor and patch version is about to be this template.
