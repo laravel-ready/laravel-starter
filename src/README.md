@@ -46,6 +46,126 @@ Batteries included ready to use development environment for Laravel.
 - [browser-sync](https://github.com/Browsersync/browser-sync): Keep multiple browsers & devices in sync when building apps.
   - First, you must run `php artisan serve` to start the server. Then run `npm run watch` to watch for changes. Browsersync listens to laravel app 8000 port and exposes it to your browser at `localhost:3000` and Browsersync UI `localhost:3001` ports.
 
+## Quick API Layer
+
+Generally, we are using Laravel's [resource](https://laravel.com/docs/9.x/eloquent-resources) to create RESTful API. If somethings is going to be more complex than that, I am using respotory pattern and my custom controller to handle it. [ApiController.php](./app/Http/Controllers/Api/ApiController.php) is the API controller and [ApiResourceController.php](./app/Http/Controllers/Api/ApiResourceController.php) is the custom resource controller. So, you can create API's with the same code. When you need more custom code you can add it.
+
+### Example
+
+Add resource router in your `api.php` file.
+
+```php
+Route::apiResources([
+    'tag.tags' => Tag\TagController::class,
+]);
+```
+
+Create dummy repository in your `app/Repositories/Tag/TagRepository.php` file. (Assumed model is already created.)
+
+<details>
+  <summary>Click to see repository codes</summary>
+
+```php
+<?php
+
+namespace App\Repositories\Tag;
+
+use App\Models\Tag\Tag;
+use App\Repositories\BaseRepository;
+
+class TagRepository extends BaseRepository
+{
+    protected array $fieldSearchable = [];
+
+    public function getFieldsSearchable(): array
+    {
+        return $this->fieldSearchable;
+    }
+
+    public function model(): string
+    {
+        return Tag::class;
+    }
+}
+```
+</details>
+
+Create your controller in your `app/Http/Controllers/Api/TagController.php` file.
+
+<details>
+  <summary>Click to see controller codes</summary>
+
+  We are added a little bit complex logic to handle flexible API's. Also, if you want to add custom permission validator and auto activity logger you must check these controllers. There are some mistery comment blocks.
+
+```php
+<?php
+
+namespace App\Http\Controllers\Api\Tag;
+
+use App\Http\Controllers\Api\ApiResourceController;
+use App\Http\Requests\Api\Tag\CreateTagRequest;
+use App\Models\Tag\Tag;
+use App\Repositories\Tag\TagRepository;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+
+class TagController extends ApiResourceController
+{
+    public function __construct(TagRepository $baseRepo)
+    {
+        parent::__construct($baseRepo);
+
+        $this->sectionName = 'Tag';
+
+        // required spatie/laravel-permission package
+        // $this->roleAndPermissions = [
+        //     'index' => 'view_product',
+        //     'show' => 'view_product',
+        //     'store' => 'create_product',
+        //     'update' => 'update_product',
+        //     'destroy' => 'delete_product',
+        // ];
+    }
+
+    public function index(Request $request): JsonResponse
+    {
+        $all = $request->query('all');
+
+        $itemsQuery = $this->baseRepository->makeModel()->orderBy('created_at', 'desc');
+
+        $items = $all ?
+            $itemsQuery->get() :
+            $itemsQuery->cursorPaginate(20);
+
+        $this->setResponseMessage('listed');
+
+        return $this->sendResponse($items, $this->responseMessage);
+    }
+
+    public function show(Tag $tag): JsonResponse
+    {
+        return $this->showResource($tag);
+    }
+
+    public function store(CreateTagRequest $request): JsonResponse
+    {
+        return $this->storeResource($request);
+    }
+
+    public function update(CreateTagRequest $request, Tag $tag): JsonResponse
+    {
+        return $this->updateResource($request, $tag);
+    }
+
+    public function destroy(Tag $tag): JsonResponse
+    {
+        return $this->destroyResource($tag);
+    }
+}
+
+```
+</details>
+
 ## Artisan Commands
 
 <details>
