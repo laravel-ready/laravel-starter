@@ -2,7 +2,6 @@
 
 namespace App\Traits;
 
-use Exception;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
@@ -11,13 +10,12 @@ trait StorageTrait
     /**
      * Save a file to the storage.
      *
-     * @param object $file
-     * @param string $folder
-     * @param string $fileName
-     * @param string $disk
+     * @param  object  $file
+     * @param  string  $path
+     * @param  string  $fileName
      * @return bool|string
      */
-    public function saveFileToDisk(object $file, string $folder, string $fileName, string $disk = 'public'): bool|string
+    public function saveFileToDisk($file, $folder, $fileName, $disk = 'public'): bool|string
     {
         $ext = $file->getClientOriginalExtension();
         $fullFilePath = "{$folder}/{$fileName}.{$ext}";
@@ -31,11 +29,24 @@ trait StorageTrait
     }
 
     /**
+     * Get path of local path
+     *
+     * @param  object  $filePath
+     * @param  string  $disk
+     * @return bool|string
+     */
+    public function getStoragePath(string $filePath, string $disk = 'public'): bool|string
+    {
+        // get storage path
+        return Storage::disk($disk)->path($filePath);
+    }
+
+    /**
      * Move a file on disk
      *
-     * @param string $filePath
-     * @param string $newPath
-     * @param string $disk
+     * @param  object  $file
+     * @param  string  $path
+     * @param  string  $fileName
      * @return bool|string
      */
     public function moveFileOnDisk(string $filePath, string $newPath, string $disk = 'public'): bool|string
@@ -80,13 +91,24 @@ trait StorageTrait
     }
 
     /**
-     * Get a file from the storage.
+     * Check file exists in the storage.
      *
-     * @param string $filePath
-     * @param string $fileName
-     * @param string $disk
+     * @param  string  $filePath
+     * @param  string  $disk
+     * @return string|bool
+     */
+    public function fileExists(string $filePath, string $disk = 'public'): bool
+    {
+        return Storage::disk($disk)->exists($filePath);
+    }
+
+    /**
+     * Download a file from the storage.
+     *
+     * @param  string  $filePath
+     * @param  string  $fileName
+     * @param  string  $disk
      * @return StreamedResponse
-     * @throws Exception
      */
     public function downloadFileFromDisk(string $filePath, string $fileName, string $disk = 'public'): StreamedResponse
     {
@@ -98,6 +120,6 @@ trait StorageTrait
             return Storage::disk($disk)->download($filePath, $fileName, $headers);
         }
 
-        throw new Exception('File not found');
+        // TODO: add exception
     }
 }
