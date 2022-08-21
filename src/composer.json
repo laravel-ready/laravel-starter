@@ -9,7 +9,6 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "arcanedev/log-viewer": "^9.0",
         "biiiiiigmonster/hasin": "^2.0",
         "binarytorch/larecipe": "^2.5",
         "guzzlehttp/guzzle": "^7.4",
@@ -18,6 +17,7 @@
         "laravel/framework": "^v9.2",
         "laravel/sanctum": "^v2.1",
         "laravel/tinker": "^2.7",
+        "opcodesio/log-viewer": "^1.0",
         "spatie/laravel-data": "^1.5",
         "spatie/laravel-ignition": "1.2.3"
     },

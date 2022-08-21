@@ -1,141 +1,46 @@
 <?php
 
-use Arcanedev\LogViewer\Contracts\Utilities\Filesystem;
-
 return [
-
-    /* -----------------------------------------------------------------
-     |  Log files storage path
-     | -----------------------------------------------------------------
+    /**
+     * Log Viewer route path.
      */
+    'route_path' => 'logs',
 
-    'storage-path' => storage_path('logs'),
-
-    /* -----------------------------------------------------------------
-     |  Log files pattern
-     | -----------------------------------------------------------------
+    /**
+     * When set, displays a link to easily get back to this URL.
+     * Set to `null` to hide this link.
      */
+    'back_to_system_url' => config('app.url', null),
 
-    'pattern' => [
-        'prefix' => Filesystem::PATTERN_PREFIX,    // 'laravel-'
-        'date' => Filesystem::PATTERN_DATE,      // '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'
-        'extension' => Filesystem::PATTERN_EXTENSION, // '.log'
+    /**
+     * Optional label to display for the above URL. Defaults to "Back to {{ app.name }}"
+     */
+    'back_to_system_label' => null,
+
+    /**
+     * Log Viewer route middleware.
+     * The middleware should enable session and cookies support in order for the Log Viewer to work.
+     * The 'web' middleware will be applied automatically if empty.
+     */
+    'middleware' => ['web'],
+
+    /**
+     * Include file patterns
+     */
+    'include_files' => ['*.log'],
+
+    /**
+     * Exclude file patterns. This will take precedence
+     */
+    'exclude_files' => [],
+
+    /**
+     * Shorter stack trace filters. Any lines containing any of the below strings will be excluded from the full log.
+     * Only active when the setting is on, which can be toggled in the user interface.
+     */
+    'shorter_stack_trace_excludes' => [
+        '/vendor/symfony/',
+        '/vendor/laravel/framework/',
+        '/vendor/barryvdh/laravel-debugbar/',
     ],
-
-    /* -----------------------------------------------------------------
-     |  Locale
-     | -----------------------------------------------------------------
-     |  Supported locales :
-     |    'auto', 'ar', 'bg', 'de', 'en', 'es', 'et', 'fa', 'fr', 'hu', 'hy', 'id', 'it', 'ja', 'ko', 'nl',
-     |    'pl', 'pt-BR', 'ro', 'ru', 'sv', 'th', 'tr', 'zh-TW', 'zh'
-     */
-
-    'locale' => 'auto',
-
-    /* -----------------------------------------------------------------
-     |  Theme
-     | -----------------------------------------------------------------
-     |  Supported themes :
-     |    'bootstrap-3', 'bootstrap-4'
-     |  Make your own theme by adding a folder to the views directory and specifying it here.
-     */
-
-    'theme' => 'bootstrap-4',
-
-    /* -----------------------------------------------------------------
-     |  Route settings
-     | -----------------------------------------------------------------
-     */
-
-    'route' => [
-        'enabled' => true,
-
-        'attributes' => [
-            'prefix' => 'logs',
-
-            'middleware' => env('ARCANEDEV_LOGVIEWER_MIDDLEWARE') ? explode(',', env('ARCANEDEV_LOGVIEWER_MIDDLEWARE')) : null,
-        ],
-    ],
-
-    /* -----------------------------------------------------------------
-     |  Log entries per page
-     | -----------------------------------------------------------------
-     |  This defines how many logs & entries are displayed per page.
-     */
-
-    'per-page' => 30,
-
-    /* -----------------------------------------------------------------
-     |  Download settings
-     | -----------------------------------------------------------------
-     */
-
-    'download' => [
-        'prefix' => 'laravel-',
-
-        'extension' => 'log',
-    ],
-
-    /* -----------------------------------------------------------------
-     |  Menu settings
-     | -----------------------------------------------------------------
-     */
-
-    'menu' => [
-        'filter-route' => 'log-viewer::logs.filter',
-
-        'icons-enabled' => true,
-    ],
-
-    /* -----------------------------------------------------------------
-     |  Icons
-     | -----------------------------------------------------------------
-     */
-
-    'icons' => [
-        /**
-         * Font awesome >= 4.3
-         * http://fontawesome.io/icons/
-         */
-        'all' => 'fa fa-fw fa-list',                 // http://fontawesome.io/icon/list/
-        'emergency' => 'fa fa-fw fa-bug',                  // http://fontawesome.io/icon/bug/
-        'alert' => 'fa fa-fw fa-bullhorn',             // http://fontawesome.io/icon/bullhorn/
-        'critical' => 'fa fa-fw fa-heartbeat',            // http://fontawesome.io/icon/heartbeat/
-        'error' => 'fa fa-fw fa-times-circle',         // http://fontawesome.io/icon/times-circle/
-        'warning' => 'fa fa-fw fa-exclamation-triangle', // http://fontawesome.io/icon/exclamation-triangle/
-        'notice' => 'fa fa-fw fa-exclamation-circle',   // http://fontawesome.io/icon/exclamation-circle/
-        'info' => 'fa fa-fw fa-info-circle',          // http://fontawesome.io/icon/info-circle/
-        'debug' => 'fa fa-fw fa-life-ring',            // http://fontawesome.io/icon/life-ring/
-    ],
-
-    /* -----------------------------------------------------------------
-     |  Colors
-     | -----------------------------------------------------------------
-     */
-
-    'colors' => [
-        'levels' => [
-            'empty' => '#D1D1D1',
-            'all' => '#8A8A8A',
-            'emergency' => '#B71C1C',
-            'alert' => '#D32F2F',
-            'critical' => '#F44336',
-            'error' => '#FF5722',
-            'warning' => '#FF9100',
-            'notice' => '#4CAF50',
-            'info' => '#1976D2',
-            'debug' => '#90CAF9',
-        ],
-    ],
-
-    /* -----------------------------------------------------------------
-     |  Strings to highlight in stack trace
-     | -----------------------------------------------------------------
-     */
-
-    'highlight' => [
-        '^#\d+',
-        '^Stack trace:',
-    ],
-
 ];

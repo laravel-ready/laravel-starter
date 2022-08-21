@@ -7,7 +7,7 @@ Batteries included ready to use development environment for Laravel.
 - [pretty-routes](https://github.com/TheDragonCode/pretty-routes): List all routes in one UI.
   - Navigate to `/routes` in your browser.
 
-- [LogViewer](https://github.com/ARCANEDEV/LogViewer): View Laravel logs in one UI.
+- [LogViewer](https://github.com/opcodesio/log-viewer): View Laravel logs in one UI.
   - Navigate to `/logs` in your browser.
 
 - [laravel-data](https://github.com/spatie/laravel-data): Powerful data objects for Laravel.
