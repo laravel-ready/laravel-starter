@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /public/dist
+/public/build
 /storage/*.key
 /vendor
 .env
