@@ -6,6 +6,12 @@ Ready to use empty laravel starter project template. It has a simple and clean p
 
 See the more details in the [README.md](src/README.md) file.
 
+## Installation
+
+```bash
+composer create-project laravel-ready/laravel-starter {project_name} --stability=dev
+```
+
 ## Preinstalled laravel packages
 
 - [pretty-routes](https://github.com/TheDragonCode/pretty-routes): List all routes in one UI.
