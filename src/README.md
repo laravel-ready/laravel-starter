@@ -261,3 +261,11 @@ See more examples abouts pesting [here](https://pestphp.com/docs/writing-tests).
 php ./vendor/bin/pest
 ```
 </details>
+
+
+## ⚠️ Commit Messages
+
+- You need to read [commit message guidelines](https://github.com/RomuloOliveira/commit-messages-guide). 
+- You must use [conventional commits](https://conventionalcommits.org/).
+
+Otherwise, I won't be able to review your commits.
