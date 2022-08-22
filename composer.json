@@ -1,10 +1,13 @@
 {
-    "name": "laravel/laravel",
+    "name": "laravel-ready/laravel-starter",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Batteries included ready to use empty laravel starter project template.",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "laravel-starter",
+        "laravel-ready",
+        "starter-template"
     ],
     "license": "MIT",
     "require": {
