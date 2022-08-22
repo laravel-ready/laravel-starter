@@ -26,6 +26,9 @@ composer create-project laravel-ready/laravel-starter {project_name} --stability
   - First, you must run `php artisan larecipe:install` command to publish the needed assets and configurations. 
   - Then, Navigate to `/docs` in your browser.
 
+- [laravel/ui](https://github.com/laravel/ui): Ready to use auth views, forms, UI utilities and presets.
+  - Views and controllers are already installed but you can overwrite with run `php artisan ui:auth` command to publish the needed assets and configurations.
+
 - Debugging
   - [clockwork](https://github.com/itsgoingd/clockwork): Modern debugging tool for Laravel. (debugbar alternative)
     - Navigate to `/clockwork` in your browser.
