@@ -1,4 +1,4 @@
-## Preinstalled laravel packages
+## 📦 Preinstalled laravel packages
 
 - [pretty-routes](https://github.com/TheDragonCode/pretty-routes): List all routes in one UI.
   - Navigate to `/routes` in your browser.
@@ -35,15 +35,26 @@
   - [pint](https://github.com/laravel/pint): PHP code style fixer (PHP-CS Fixer wrapper).
   - [pest](https://github.com/pestphp/pest): Pest is an elegant PHP Testing Framework with a focus on simplicity.
 
-## Languages
+## 🚩 Languages
 
 - en: native/default
 - [tr](https://github.com/EgoistDeveloper/laravel-turkish-translations)
 
-## Preinstalled mix packages
+## 🔰 Laravel Mix
+
+This project uses [Laravel Mix](https://laravel.com/docs/9.x/mix) to compile the assets.
+
+### Preinstalled packages
 
 - [browser-sync](https://github.com/Browsersync/browser-sync): Keep multiple browsers & devices in sync when building apps.
   - First, you must run `php artisan serve` to start the server. Then run `npm run watch` to watch for changes. Browsersync listens to laravel app 8000 port and exposes it to your browser at `localhost:3000` and Browsersync UI `localhost:3001` ports.
+
+## ⚡ ViteJS
+
+Also this project uses [ViteJS](https://vitejs.io/) to speed up the development process. You can use it to build your project faster.
+
+**Why we are using both of them?**
+> ViteJS is a JavaScript runtime that is optimized for web applications. For example, it is optimized for the Vue.js framework. But if you want to use blade templates, Laravel Mix is still a useful option. Plus, browser-sync is a great solution for smooth development.
 
 ## Quick API Layer
 
@@ -165,7 +176,7 @@ class TagController extends ApiResourceController
 ```
 </details>
 
-## Artisan Commands
+## 🎨 Artisan Commands
 
 <details>
   <summary>Click to see artisan commands</summary>
@@ -233,7 +244,7 @@ php ./vendor/bin/phpstan analyse --memory-limit=2G --level=9
 ```
 </details>
 
-## Pint Commands
+## ✂️ Pint Commands
 
 See full config list and examples [here](https://mlocati.github.io/php-cs-fixer-configurator/#version:3.8).
 
@@ -247,7 +258,7 @@ php ./vendor/bin/pint -v
 ```
 </details>
 
-## Pest Commands
+## 🔬 Pest Commands
 
 See more examples abouts pesting [here](https://pestphp.com/docs/writing-tests).
 
