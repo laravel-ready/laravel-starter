@@ -5,6 +5,9 @@
 # go to backend folder
 cd ../../
 
+# install composer dependencies
+composer install
+
 # migrate database
 php artisan migrate
 

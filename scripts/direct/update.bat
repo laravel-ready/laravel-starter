@@ -5,6 +5,9 @@
 @REM go to backend folder
 cd ../../
 
+@REM install composer dependencies
+CALL composer install
+
 @REM migrate database
 CALL php artisan migrate
 
