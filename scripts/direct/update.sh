@@ -1,4 +1,4 @@
-# You need to run this on every update
+# You need to run this on every update (only for production)
 
 # ~~~~~~~~ Laravel App ~~~~~~~~
 
@@ -17,3 +17,6 @@ npm i -s
 # run build script
 npm run build
 npm run prod
+
+# run optimize command
+php artisan optimize
