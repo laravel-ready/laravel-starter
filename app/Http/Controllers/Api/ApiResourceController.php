@@ -135,7 +135,7 @@ class ApiResourceController extends ApiController
 
     public function setResponseMessage(string $transKey, string $appendMessage = null): void
     {
-        $this->responseMessage = "{$this->sectionName} " . __("crud.{$transKey}");
+        $this->responseMessage = "{$this->sectionName} ".__("crud.{$transKey}");
 
         if ($appendMessage) {
             $this->responseMessage .= " {$appendMessage}";

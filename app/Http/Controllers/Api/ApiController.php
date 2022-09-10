@@ -50,7 +50,7 @@ class ApiController extends BaseController
             $permission = $this->roleAndPermissions[$this->runningMethod];
             $hasPermission = Auth::user()->hasPermissionTo($permission, 'api');
 
-            if (!$hasPermission) {
+            if (! $hasPermission) {
                 return false;
             }
         }
@@ -75,7 +75,7 @@ class ApiController extends BaseController
         return Response::json([
             'success' => true,
             'data' => $data,
-            'message' => Str::ucfirst(Str::lower($message)) . '.',
+            'message' => Str::ucfirst(Str::lower($message)).'.',
         ]);
     }
 
@@ -89,7 +89,7 @@ class ApiController extends BaseController
     {
         return Response::json([
             'success' => true,
-            'message' => Str::ucfirst(Str::lower($message)) . '.',
+            'message' => Str::ucfirst(Str::lower($message)).'.',
         ], 200);
     }
 
@@ -107,7 +107,7 @@ class ApiController extends BaseController
             'message' => $error,
         ];
 
-        if (!empty($data)) {
+        if (! empty($data)) {
             $res['data'] = $data;
         }
 
