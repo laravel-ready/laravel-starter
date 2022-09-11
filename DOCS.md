@@ -29,6 +29,7 @@
   - [readable-numbers](https://github.com/laravel-ready/readable-numbers): Human readable numbers.
   - [ultimate-support](https://github.com/laravel-ready/ultimate-support): Useful helper collection.
   - [hasin](https://github.com/biiiiiigmonster/hasin): The 'hasin' is 'Relation Mixin' of 'Laravel ORM'. Replacement for some `has` and `whereHas` cases.
+  - [once](https://github.com/spatie/once): A magic memoization function to cache the result of a function call.
 
 - Code Analysis
   - [larastan](https://github.com/nunomaduro/larastan): Adds code analysis to Laravel improving developer productivity and code quality (PHPStan wrapper).
