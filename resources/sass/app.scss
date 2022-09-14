@@ -1,8 +1,13 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+// fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
-// Variables
-@import 'variables';
+// common variables
+@import "variables";
 
-// Bootstrap
-@import 'bootstrap/scss/bootstrap';
+body {
+    font-family: $font-family-sans-serif;
+}
+
+@import "./partials/base-bootstrap.scss";
+
+@import "./partials/base-tailwind.scss";

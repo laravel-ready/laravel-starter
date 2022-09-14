@@ -1,6 +1,11 @@
 const mix = require("laravel-mix");
+const tailwindcss = require("tailwindcss");
 
-mix.browserSync({ proxy: "localhost:8000" });
+mix.browserSync({
+    proxy: "localhost:8000"
+});
+
+const publicAssetsPath = 'public/assets';
 
 /*
  |--------------------------------------------------------------------------
@@ -13,8 +18,16 @@ mix.browserSync({ proxy: "localhost:8000" });
  |
  */
 
-mix.js("resources/js/app.js", "public/dist/js")
-    .postCss("resources/css/app.css", "public/dist/css", [
-        //
-    ])
-    .disableNotifications();
+// build with vue
+mix.js('resources/js/app.js', `${publicAssetsPath}/js/app.js`).vue();
+
+// build sass
+mix.sass('resources/sass/app.scss', `${publicAssetsPath}/css/app.css`)
+    .options({
+        processCssUrls: false,
+        postCss: [
+            tailwindcss('./tailwind.config.js')
+        ],
+    }).version();
+
+mix.disableNotifications();
