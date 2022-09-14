@@ -2,6 +2,7 @@ const mix = require("laravel-mix");
 const tailwindcss = require("tailwindcss");
 
 mix.browserSync({
+    port: 3000,
     proxy: "localhost:8000"
 });
 
