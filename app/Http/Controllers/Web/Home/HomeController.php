@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web\Home;
+
+use App\Http\Controllers\Web\Controller;
 
 class HomeController extends Controller
 {
