@@ -1,15 +1,14 @@
 {
 	"private": true,
 	"scripts": {
-		"development": "mix",
-		"watch": "mix watch",
-		"watch-poll": "mix watch -- --watch-options-poll=1000",
-		"hot": "mix watch --hot",
-		"prod": "npm run production",
-		"production": "mix --production",
-		"build": "vite build",
-		"dev": "vite build --watch",
-		"preview": "vite preview"
+		"mix:dev": "mix",
+		"mix:watch": "mix watch",
+		"mix:watch-poll": "mix watch -- --watch-options-poll=1000",
+		"mix:hot": "mix watch --hot",
+		"mix:prod": "mix --production",
+		"vite:build": "vite build",
+		"vite:watch": "vite build --watch",
+		"vite:preview": "vite preview"
 	},
 	"devDependencies": {
 		"@popperjs/core": "^2.10.2",
