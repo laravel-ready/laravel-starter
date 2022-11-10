@@ -2,12 +2,13 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // common variables
-@import "variables";
+@import "./../../variables";
 
 body {
     font-family: $font-family-sans-serif;
 }
 
-// @import "./partials/base-bootstrap.scss";
+@import "./../../partials/base-tailwind.scss";
 
-@import "./partials/base-tailwind.scss";
+@import "./layout/main.scss";
+@import "./components/inputs.scss";
