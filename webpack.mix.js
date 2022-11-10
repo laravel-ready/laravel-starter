@@ -3,7 +3,8 @@ const tailwindcss = require("tailwindcss");
 
 mix.browserSync({
     port: 3000,
-    proxy: "localhost:8000"
+    proxy: "localhost:8000",
+    open: false
 });
 
 const publicAssetsPath = 'public/assets';
