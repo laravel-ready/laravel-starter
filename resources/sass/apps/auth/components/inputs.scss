@@ -8,7 +8,7 @@ span[role="alert"] {
     @apply relative;
 
     input {
-        @apply text-base w-full px-4 py-1 rounded-md border border-blue-200 text-gray-900
+        @apply text-base w-full px-4 py-[0.5rem] rounded-md border border-blue-200 text-gray-900
                 focus:border focus:border-blue-300 peer-focus:outline-none
                 focus:outline-none transition-colors duration-200;
 
@@ -18,7 +18,7 @@ span[role="alert"] {
     }
 
     .eye-toggle {
-        @apply absolute right-3 top-[10px];
+        @apply absolute right-3 top-[12px];
 
         svg {
             @apply h-[18px] fill-gray-500 transition-colors duration-150;
@@ -46,6 +46,6 @@ span[role="alert"] {
     }
 
     .btn-link {
-        @apply text-sm ml-5 hover:text-blue-500 transition-colors duration-200 float-right;
+        @apply text-sm ml-5 mt-[7px] hover:text-blue-500 transition-colors duration-200 float-right;
     }
 }
