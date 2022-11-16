@@ -1,26 +1,38 @@
 // @source: https://tailwindcomponents.com/component/login-form-with-floating-labels
 .auth-card-container {
-    @apply bg-gray-100 flex flex-col justify-center min-h-screen py-6 sm:py-12;
+    @apply flex flex-col justify-center min-h-screen py-6 sm:py-12;
 
     .auth-card {
         @apply py-3 relative sm:max-w-xl sm:mx-auto;
 
+        &:hover {
+            .backward-card {
+                @apply opacity-80;
+            }
+
+            .front-card {
+                @apply shadow-2xl;
+            }
+        }
+
         .backward-card {
             @apply -skew-y-6 absolute bg-gradient-to-r from-blue-300 inset-0
-                shadow-lg sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl to-blue-600 transform;
+                shadow-lg sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl to-blue-600 transform
+                transition-all duration-150;
         }
 
         .front-card {
-            @apply bg-white px-4 py-10 relative shadow-lg sm:rounded-3xl sm:px-12 sm:py-16;
+            @apply bg-white px-4 py-10 relative shadow-xl sm:rounded-3xl sm:px-12 sm:py-16
+                dark:bg-gray-800 transition-all duration-150;
 
             .card-container {
                 @apply max-w-md mx-auto;
 
                 .title {
-                    @apply text-center;
+                    @apply text-center text-gray-900 dark:text-gray-300;
 
                     .form-title {
-                        @apply font-semibold mb-2 text-2xl;
+                        @apply font-semibold mb-2 text-2xl cursor-default;
                     }
                 }
 

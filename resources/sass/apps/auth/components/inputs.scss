@@ -10,7 +10,9 @@ span[role="alert"] {
     input {
         @apply text-base w-full px-4 py-[0.5rem] rounded-md border border-blue-200 text-gray-900
                 focus:border focus:border-blue-300 peer-focus:outline-none
-                focus:outline-none transition-colors duration-200;
+                focus:outline-none transition-colors duration-200
+                dark:bg-gray-700 dark:border-gray-600 dark:focus:border-gray-500
+                selection:bg-gray-500;
 
         &[name="password"] {
             @apply pr-10 #{!important};
@@ -42,10 +44,12 @@ span[role="alert"] {
     @apply relative pt-4;
 
     button {
-        @apply bg-blue-500 text-base rounded-md text-white rounded-[3px] px-4 py-1;
+        @apply bg-blue-500 text-base text-white rounded-[3px] px-4 py-1;
     }
 
     .btn-link {
-        @apply text-sm ml-5 mt-[7px] hover:text-blue-500 transition-colors duration-200 float-right;
+        @apply text-sm ml-5 mt-[7px] hover:text-blue-500 transition-colors duration-200
+            float-right cursor-default dark:text-gray-400 dark:hover:text-gray-300
+            cursor-pointer;
     }
 }
