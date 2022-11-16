@@ -57,10 +57,6 @@ Also this project uses [ViteJS](https://vitejs.io/) to speed up the development 
 **Why we are using both of them?**
 > ViteJS is a JavaScript runtime that is optimized for web applications. For example, it is optimized for the Vue.js framework. But if you want to use blade templates, Laravel Mix is still a useful option. Plus, browser-sync is a great solution for smooth development.
 
-## Terminals
-
-This project handles multiple terminals on startup with [Terminals Manager](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-terminals). You can configure it in `.vscode/terminals.json` file.
-
 ## Quick API Layer
 
 Generally, we are using Laravel's [resource](https://laravel.com/docs/9.x/eloquent-resources) to create RESTful API. If somethings is going to be more complex than that, I am using respotory pattern and my custom controller to handle it. [ApiController.php](./app/Http/Controllers/Api/ApiController.php) is the API controller and [ApiResourceController.php](./app/Http/Controllers/Api/ApiResourceController.php) is the custom resource controller. So, you can create API's with the same code. When you need more custom code you can add it.
@@ -293,3 +289,7 @@ This project comes with a docker stack for laravel. It contains: [Dockerfile](ht
 ## 👍 Suggested Tools
 
 - Use [command aliases](https://github.com/EgoistDeveloper/dev-aliases) to save time and make your development environment more comfortable.
+
+- This project handles multiple terminals on startup with [Terminals Manager](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-terminals). You can configure it in `.vscode/terminals.json` file.
+
+- If you are working on multiple projects, you can set accent color for each project with [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock). You can configure it in `.vscode/settings.json` file.	
