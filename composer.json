@@ -23,6 +23,7 @@
 		"guzzlehttp/guzzle": "^7.5.0",
 		"laravel-ready/readable-numbers": "^1.0",
 		"laravel-ready/ultimate-support": "^1.0",
+		"laravel/fortify": "^1.13",
 		"laravel/framework": "^9.21",
 		"laravel/sanctum": "^v2.1",
 		"laravel/tinker": "^2.7",
