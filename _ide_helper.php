@@ -13578,47 +13578,6 @@
                         /** @var \Illuminate\Routing\Router $instance */
                         return $instance->macroCall($method, $parameters);
         }
-                    /**
-         * 
-         *
-         * @see \Laravel\Ui\AuthRouteMethods::auth()
-         * @param mixed $options
-         * @static 
-         */ 
-        public static function auth($options = [])
-        {
-                        return \Illuminate\Routing\Router::auth($options);
-        }
-                    /**
-         * 
-         *
-         * @see \Laravel\Ui\AuthRouteMethods::resetPassword()
-         * @static 
-         */ 
-        public static function resetPassword()
-        {
-                        return \Illuminate\Routing\Router::resetPassword();
-        }
-                    /**
-         * 
-         *
-         * @see \Laravel\Ui\AuthRouteMethods::confirmPassword()
-         * @static 
-         */ 
-        public static function confirmPassword()
-        {
-                        return \Illuminate\Routing\Router::confirmPassword();
-        }
-                    /**
-         * 
-         *
-         * @see \Laravel\Ui\AuthRouteMethods::emailVerification()
-         * @static 
-         */ 
-        public static function emailVerification()
-        {
-                        return \Illuminate\Routing\Router::emailVerification();
-        }
          
     }
             /**
@@ -18799,81 +18758,6 @@
      
 }
 
-    namespace Spatie\Health\Facades { 
-            /**
-     * 
-     *
-     * @see \Spatie\Health\Health
-     */ 
-        class Health {
-                    /**
-         * 
-         *
-         * @param \Spatie\Health\array<int,  Check>  $checks
-         * @static 
-         */ 
-        public static function checks($checks)
-        {
-                        /** @var \Spatie\Health\Health $instance */
-                        return $instance->checks($checks);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function clearChecks()
-        {
-                        /** @var \Spatie\Health\Health $instance */
-                        return $instance->clearChecks();
-        }
-                    /**
-         * 
-         *
-         * @return \Spatie\Health\Collection<int, Check>
-         * @static 
-         */ 
-        public static function registeredChecks()
-        {
-                        /** @var \Spatie\Health\Health $instance */
-                        return $instance->registeredChecks();
-        }
-                    /**
-         * 
-         *
-         * @return \Spatie\Health\Collection<int, ResultStore>
-         * @static 
-         */ 
-        public static function resultStores()
-        {
-                        /** @var \Spatie\Health\Health $instance */
-                        return $instance->resultStores();
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function inlineStylesheet($stylesheet)
-        {
-                        /** @var \Spatie\Health\Health $instance */
-                        return $instance->inlineStylesheet($stylesheet);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function assets()
-        {
-                        /** @var \Spatie\Health\Health $instance */
-                        return $instance->assets();
-        }
-         
-    }
-     
-}
-
     namespace Spatie\LaravelIgnition\Facades { 
             /**
      * 
@@ -19455,59 +19339,6 @@
         public static function ray()
         {
                         return \Illuminate\Database\Query\Builder::ray();
-        }
-         
-    }
-     
-}
-
-    namespace Illuminate\Routing { 
-            /**
-     * 
-     *
-     * @mixin \Illuminate\Routing\RouteRegistrar
-     */ 
-        class Router {
-                    /**
-         * 
-         *
-         * @see \Laravel\Ui\AuthRouteMethods::auth()
-         * @param mixed $options
-         * @static 
-         */ 
-        public static function auth($options = [])
-        {
-                        return \Illuminate\Routing\Router::auth($options);
-        }
-                    /**
-         * 
-         *
-         * @see \Laravel\Ui\AuthRouteMethods::resetPassword()
-         * @static 
-         */ 
-        public static function resetPassword()
-        {
-                        return \Illuminate\Routing\Router::resetPassword();
-        }
-                    /**
-         * 
-         *
-         * @see \Laravel\Ui\AuthRouteMethods::confirmPassword()
-         * @static 
-         */ 
-        public static function confirmPassword()
-        {
-                        return \Illuminate\Routing\Router::confirmPassword();
-        }
-                    /**
-         * 
-         *
-         * @see \Laravel\Ui\AuthRouteMethods::emailVerification()
-         * @static 
-         */ 
-        public static function emailVerification()
-        {
-                        return \Illuminate\Routing\Router::emailVerification();
         }
          
     }
@@ -23718,7 +23549,6 @@ namespace  {
             class UltimateSupport extends \LaravelReady\UltimateSupport\Facades\UltimateSupport {}
             class Livewire extends \Livewire\Livewire {}
             class LogViewer extends \Opcodes\LogViewer\Facades\LogViewer {}
-            class Health extends \Spatie\Health\Facades\Health {}
             class Flare extends \Spatie\LaravelIgnition\Facades\Flare {}
      
 }
