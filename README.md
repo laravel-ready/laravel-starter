@@ -13,3 +13,6 @@ composer create-project laravel-ready/laravel-starter {project_name} --stability
 ## Documentation
 
 You can find the documentation **[here](./DOCS.md).**
+
+Photo by <a href="https://unsplash.com/@sebastiansvenson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sebastian Svenson</a> on <a href="https://unsplash.com/photos/c10tq-bB52Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
