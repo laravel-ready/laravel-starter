@@ -18,4 +18,4 @@ Route::get('', function () {
     return view('welcome');
 });
 
-Route::get('home', [Home\HomeController::class, 'index'])->name('home');
+Route::get('home', [Home\HomeController::class, 'index'])->middleware(['auth', 'verified', 'password.confirm'])->name('home');

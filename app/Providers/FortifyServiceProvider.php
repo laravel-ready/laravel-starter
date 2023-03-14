@@ -39,11 +39,18 @@ class FortifyServiceProvider extends ServiceProvider
         RateLimiter::for('login', function (Request $request) {
             $email = (string) $request->email;
 
-            return Limit::perMinute(5)->by($email.$request->ip());
+            return Limit::perMinute(5)->by($email . $request->ip());
         });
 
         RateLimiter::for('two-factor', function (Request $request) {
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
+
+        $theme = 'starter';
+
+        Fortify::loginView(fn () => view("fortify-ui::{$theme}.pages.login"));
+        Fortify::registerView(fn () => view("fortify-ui::{$theme}.pages.register"));
+        Fortify::verifyEmailView(fn () => view("fortify-ui::{$theme}.pages.verification.notice"));
+        Fortify::confirmPasswordView(fn () => view("fortify-ui::{$theme}.pages.confirm-password"));
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "11d9f1bf43d2d773db93f47759456499",
+    "content-hash": "5694e47b63f3f292f500c32e96f94c02",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1798,67 +1798,6 @@
                 "source": "https://github.com/laravel/tinker/tree/v2.7.2"
             },
             "time": "2022-03-23T12:38:24+00:00"
-        },
-        {
-            "name": "laravel/ui",
-            "version": "v4.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/ui.git",
-                "reference": "9aa6930c8ae98b2465594d7f14f4ac131bfd6a99"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/ui/zipball/9aa6930c8ae98b2465594d7f14f4ac131bfd6a99",
-                "reference": "9aa6930c8ae98b2465594d7f14f4ac131bfd6a99",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": "^9.21",
-                "illuminate/filesystem": "^9.21",
-                "illuminate/support": "^9.21",
-                "illuminate/validation": "^9.21",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Laravel\\Ui\\UiServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravel\\Ui\\": "src/",
-                    "Illuminate\\Foundation\\Auth\\": "auth-backend/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "Laravel UI utilities and presets.",
-            "keywords": [
-                "laravel",
-                "ui"
-            ],
-            "support": {
-                "source": "https://github.com/laravel/ui/tree/v4.0.2"
-            },
-            "time": "2022-09-09T18:20:35+00:00"
         },
         {
             "name": "league/commonmark",
@@ -8428,6 +8367,101 @@
                 }
             ],
             "time": "2022-09-25T20:21:14+00:00"
+        },
+        {
+            "name": "laravel-ready/fortify-ui",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "C:/Users/e9396/Documents/GitHub/laravel-ready/fortify-ui",
+                "reference": "8c00322835d55c5eec0502c7e7f659374c297b7c"
+            },
+            "require": {
+                "illuminate/support": "^9.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.4",
+                "nunomaduro/larastan": "^2.1",
+                "orchestra/testbench": "^7.0.0",
+                "pestphp/pest": "^1.2",
+                "pestphp/pest-plugin-laravel": "^1.2",
+                "pestphp/pest-plugin-parallel": "^1.2",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan": "^1.8",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelReady\\FortifyUi\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelReady\\FortifyUi\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "lint": [
+                    "php-cs-fixer fix -v"
+                ],
+                "test:coverage": [
+                    "@test --coverage-php ./coverage/cov/default.cov"
+                ],
+                "test:coverage:html": [
+                    "@test --coverage-html coverage/html/default"
+                ],
+                "test": [
+                    "vendor/bin/pest --colors=always --parallel"
+                ],
+                "test:lint": [
+                    "php-cs-fixer fix -v --dry-run"
+                ],
+                "test:styles": [
+                    "vendor/bin/phpstan analyse --ansi"
+                ],
+                "test:styles:pro": [
+                    "vendor/bin/phpstan analyse --pro --fix --watch"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "EgoistDeveloper",
+                    "email": "epsilonelittr@gmail.com"
+                }
+            ],
+            "description": "Head of Laravel Fortify",
+            "keywords": [
+                "auth",
+                "auth ui",
+                "fortify",
+                "fortify auth ui",
+                "laravel",
+                "laravel fortify",
+                "laravel fortify ui",
+                "laravel ready",
+                "laravel ready ui",
+                "ui"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel-ready/fortify-ui/issues",
+                "source": "https://github.com/laravel-ready/fortify-ui"
+            },
+            "transport-options": {
+                "relative": false
+            }
         },
         {
             "name": "laravel/pint",
