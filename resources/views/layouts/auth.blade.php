@@ -9,10 +9,17 @@
     <div id="app">
         @include('layouts.partials.navbar')
 
-        <main class="py-4">
-            @yield('content')
+        <main>
+            <!-- Auth Card Container -->
+            <div class="auth-card-container">
+                @yield('content')
+            </div>
         </main>
     </div>
+
+    <footer>
+        @yield('footerScripts')
+    </footer>
 </body>
 
 </html>

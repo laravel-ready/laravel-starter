@@ -18,3 +18,4 @@ yarn-error.log
 
 resources/views/vendor/**/*
 resources/sass/apps/**/*
+public/mix-manifest.json

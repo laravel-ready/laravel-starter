@@ -1,0 +1,47 @@
+.navbar {
+	@apply backdrop-blur-md bg-transparent fixed left-0 py-[5px] sm:px-4 top-0 w-full z-20 h-[60px];
+
+	.nav-container {
+		@apply container flex flex-wrap items-center justify-between mx-auto;
+
+		.logo-link {
+			@apply flex items-center;
+
+			.site-name {
+				@apply dark:text-gray-200 font-semibold self-center text-2xl text-blue-700 whitespace-nowrap;
+			}
+		}
+
+		.hamburger-menu {
+			@apply dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300 hover:text-gray-900 inline-flex items-center justify-center md:hidden ml-3 rounded-lg text-gray-400;
+
+			span {
+				@apply sr-only;
+			}
+
+			.class-svg-6 {
+				@apply h-6 w-6;
+			}
+		}
+
+		.auth-links {
+			@apply hidden md:block md:w-auto w-full;
+
+			.link-list {
+				@apply border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 mt-4 p-4 rounded-lg;
+
+				.login {
+					a {
+						@apply block dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent pl-3 pr-4 py-2 rounded text-gray-700;
+					}
+				}
+
+				.register {
+					a {
+						@apply block dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent pl-3 pr-4 py-2 rounded text-gray-700;
+					}
+				}
+			}
+		}
+	}
+}
