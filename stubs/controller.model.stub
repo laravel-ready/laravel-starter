@@ -13,7 +13,9 @@ class {{ class }} extends Controller
      */
     public function index()
     {
-        //
+        $items = {{ model }}::all();
+
+        return response()->json($items);
     }
 
     /**
@@ -29,7 +31,9 @@ class {{ class }} extends Controller
      */
     public function store({{ storeRequest }} $request)
     {
-        //
+        $item = {{ model }}::create($request->validated());
+
+        return response()->json($item, 201);
     }
 
     /**
@@ -37,7 +41,7 @@ class {{ class }} extends Controller
      */
     public function show({{ model }} ${{ modelVariable }})
     {
-        //
+        return ${{ modelVariable }};
     }
 
     /**
@@ -53,7 +57,9 @@ class {{ class }} extends Controller
      */
     public function update({{ updateRequest }} $request, {{ model }} ${{ modelVariable }})
     {
-        //
+        ${{ modelVariable }}->update($request->validated());
+
+        return response()->json(${{ modelVariable }});
     }
 
     /**
@@ -61,6 +67,8 @@ class {{ class }} extends Controller
      */
     public function destroy({{ model }} ${{ modelVariable }})
     {
-        //
+        ${{ modelVariable }}->delete();
+
+        return response()->json(null, 204);
     }
 }
