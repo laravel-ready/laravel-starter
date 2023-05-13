@@ -162,7 +162,7 @@ Otherwise, I won't be able to review your commits.
 
 ## 🐳 Docker
 
-This project comes with a docker stack for laravel. It contains: [Dockerfile](https://github.com/laravel-ready/laravel-starter/blob/main/src/Dockerfile) with [serversideup/php](https://github.com/serversideup/docker-php/) image for Laravel app, [MySQL](https://hub.docker.com/_/mysql), and [Redis](https://hub.docker.com/_/redis) containers.
+This project comes with a docker stack for laravel. It contains: [serversideup/php](https://github.com/serversideup/docker-php/) image for Laravel app, [MySQL](https://hub.docker.com/_/mysql), and [Redis](https://hub.docker.com/_/redis) containers.
 
 `docker-compose.yml` use `.env` file for configurations. So, you need to rename `.env-example` to `.env` and fill it with your own credentials. Then you can run `docker-compose up -d` to start the stack.
 
