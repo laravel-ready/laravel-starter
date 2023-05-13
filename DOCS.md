@@ -172,4 +172,6 @@ This project comes with a docker stack for laravel. It contains: [Dockerfile](ht
 
 - This project handles multiple terminals on startup with [Terminals Manager](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-terminals). You can configure it in `.vscode/terminals.json` file.
 
-- If you are working on multiple projects, you can set accent color for each project with [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock). You can configure it in `.vscode/settings.json` file.	
+- If you are working on multiple projects, you can set accent color for each project with [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock). You can configure it in `.vscode/settings.json` file.
+
+- To consistent workplace, you can use [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) extension.
