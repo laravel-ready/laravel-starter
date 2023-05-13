@@ -1,19 +1,20 @@
 version: "3.8"
 
 services:
-  # Laravel App X
-  laravel_app_x:
-    build:
-      context: ./src
-    container_name: laravel_app_x
-    restart: unless-stopped
+  # Laravel Starter App
+  laravel_starter_app:
+    image: serversideup/php:8.2-fpm-nginx
+    container_name: laravel_starter_app
+    stdin_open: true
+    tty: true
     ports:
-      - ${LARAVEL_APP_X_PORT}:8000
+      - ${WEB_APP_PORT}:80
     volumes:
-      - ./src:/var/www/html
+      - ./:/var/www/html
     environment:
-      RUN_LARAVEL_AUTOMATIONS: "true"
-    command: php -S laravel_app_x:8000 -t ./public
+      RUN_LARAVEL_AUTOMATIONS: "false"
+      AUTORUN_ENABLED: "true"
+      AUTORUN_LARAVEL_STORAGE_LINK: "false"
     networks:
       - mysql_net
       - redis_net
@@ -38,7 +39,7 @@ services:
   laravel_redis:
     image: redis:alpine
     container_name: laravel_redis
-    hostname: laravel_app_x
+    hostname: laravel_starter_app
     restart: always
     ports:
       - ${LARAVEL_REDIS_POST}:6379
