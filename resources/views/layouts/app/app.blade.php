@@ -2,12 +2,12 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    @include('layouts.partials.head')
+    @include('layouts._partials.head')
 </head>
 
 <body>
     <div id="app">
-        @include('layouts.partials.navbar')
+        @include('layouts.app.partials.navbar')
 
         <main class="py-4">
             @yield('content')
