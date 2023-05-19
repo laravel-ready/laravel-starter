@@ -14,8 +14,6 @@ use App\Http\Controllers\Web\Home;
 |
 */
 
-Route::get('', function () {
-    return view('welcome');
-});
+Route::get('', fn () => view('pages.landing.index'));
 
 Route::get('home', [Home\HomeController::class, 'index'])->middleware(['auth', 'verified', 'password.confirm'])->name('home');
