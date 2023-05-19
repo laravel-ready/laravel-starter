@@ -6,8 +6,16 @@ Ready to use empty laravel starter project template. It has a simple and clean p
 
 ## Installation
 
+Create the project with composer:
+
 ```bash
 composer create-project laravel-ready/laravel-starter {project_name} --stability=dev
+```
+
+Install npm dependencies:
+
+```bash
+npm i
 ```
 
 ## Documentation
