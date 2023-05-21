@@ -12,12 +12,6 @@ Create the project with composer:
 composer create-project laravel-ready/laravel-starter {project_name} --stability=dev
 ```
 
-Install npm dependencies:
-
-```bash
-npm i
-```
-
 ## Documentation
 
 You can find the documentation **[here](./DOCS.md).**
