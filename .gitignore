@@ -14,7 +14,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /public/assets
-**.zip
+**/*.zip
 
 resources/views/vendor/**/*
 resources/sass/apps/**/*
