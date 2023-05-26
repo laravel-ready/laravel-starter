@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('auth.layouts.layout')
 @section('pageTitle', __('fortify-ui::auth.email_verification'))
 
 @section('content')

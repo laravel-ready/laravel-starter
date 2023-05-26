@@ -2,12 +2,12 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    @include('layouts.partials.head')
+    @include('auth.layouts.partials.head')
 </head>
 
 <body>
     <div id="app">
-        @include('layouts.partials.navbar')
+        @include('auth.layouts.partials.navbar')
 
         <main>
             <!-- Auth Card Container -->
