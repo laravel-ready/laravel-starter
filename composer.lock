@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f5fba57708838ab6e99f6fbed0e6abf",
+    "content-hash": "90e33640ee762bf7c917da82cd86b829",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1120,6 +1120,78 @@
                 }
             ],
             "time": "2021-10-07T12:57:01+00:00"
+        },
+        {
+            "name": "laravel-ready/fortify-ui",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-ready/fortify-ui.git",
+                "reference": "1c61d607c16556623df54780e7ec9011b88c8a68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-ready/fortify-ui/zipball/1c61d607c16556623df54780e7ec9011b88c8a68",
+                "reference": "1c61d607c16556623df54780e7ec9011b88c8a68",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^10.3 || ^9.0 || ^8.0",
+                "php": "^8.1 || ^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.5.1",
+                "nunomaduro/larastan": "^2.5.1",
+                "orchestra/testbench": "^v8.0.8",
+                "pestphp/pest": "^v1.22.5",
+                "pestphp/pest-plugin-laravel": "^v1.4.0",
+                "pestphp/pest-plugin-parallel": "^v1.2.1",
+                "phpstan/extension-installer": "^1.2.0",
+                "phpstan/phpstan": "^1.10.6",
+                "phpstan/phpstan-deprecation-rules": "^1.1.2",
+                "phpstan/phpstan-phpunit": "^1.3.10"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelReady\\FortifyUi\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelReady\\FortifyUi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "EgoistDeveloper",
+                    "email": "epsilonelittr@gmail.com"
+                }
+            ],
+            "description": "Head of Laravel Fortify",
+            "keywords": [
+                "auth",
+                "auth ui",
+                "fortify",
+                "fortify auth ui",
+                "laravel",
+                "laravel fortify",
+                "laravel fortify ui",
+                "laravel ready",
+                "laravel ready ui",
+                "ui"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel-ready/fortify-ui/issues",
+                "source": "https://github.com/laravel-ready/fortify-ui"
+            },
+            "time": "2023-03-26T21:09:23+00:00"
         },
         {
             "name": "laravel-ready/hasin",
