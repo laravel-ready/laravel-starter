@@ -1,0 +1,14 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        font-family: $font-family-sans-serif;
+        background-image: url("/assets/images/auth/bg-dark.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        height: 100%;
+        width: 100%;
+
+        @apply dark:bg-gray-900;
+    }
+}

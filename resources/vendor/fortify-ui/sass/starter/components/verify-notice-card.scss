@@ -1,0 +1,63 @@
+// @source: https://tailwindcomponents.com/component/simple-welcome-card-with-alpinejs-action
+
+.verify-notice-card {
+  @apply flex items-center justify-center px-5 py-10;
+
+  .card-container {
+    @apply bg-blue-600 lg:w-10/12 px-5 py-10 rounded shadow-xl text-white w-full xl:w-3/4;
+
+    .card-body {
+      @apply -mx-3 flex flex-wrap items-center justify-center;
+
+      .info-container {
+        @apply px-3 text-center;
+
+        .info-illustration {
+          @apply md:py-5 p-5 xl:px-8;
+
+          .class-svg-6 {
+            @apply h-auto w-40;
+          }
+        }
+      }
+
+      .welcome-message {
+        @apply md:w-2/4 px-3 sm:w-1/2 text-left w-full;
+
+        .message-container {
+          @apply md:py-5 pl-5 py-5 xl:px-8;
+
+          .welcome-username {
+            @apply mb-3 text-2xl;
+          }
+
+          .description {
+            @apply text-lg text-indigo-200;
+
+            a {
+              @apply text-indigo-50 underline;
+            }
+          }
+        }
+      }
+
+      .actions {
+        @apply md:w-1/4 px-3 sm:w-1/2 text-center w-full;
+
+        .action-container {
+          @apply md:py-5 py-5 xl:px-8;
+
+          .verify-email-button {
+            @apply bg-gray-200 block duration-150 ease-in-out focus:outline-none hover:bg-white 
+                hover:text-gray-900 mb-3 md:text-lg px-4 py-2 rounded text-indigo-600 transition w-full;
+          }
+
+          .logout-button {
+            @apply bg-indigo-900 duration-150 ease-in-out focus:outline-none hover:bg-gray-900 
+                px-4 py-2 rounded text-white transition w-full;
+          }
+        }
+      }
+    }
+  }
+}

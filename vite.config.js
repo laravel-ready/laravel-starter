@@ -7,7 +7,7 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/sass/app.scss',
-                'resources/sass/apps/auth/auth.scss',
+                'resources/vendor/fotify-ui/sass/starter/auth.scss',
                 'resources/js/app.js',
             ],
             refresh: true,

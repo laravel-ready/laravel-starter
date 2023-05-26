@@ -1,0 +1,59 @@
+span[role="alert"] {
+  strong {
+    @apply text-sm text-red-400 mt-2;
+  }
+}
+
+.input-container {
+  @apply relative flex flex-row justify-center items-center space-x-2 pl-2
+        rounded-md border border-blue-200 dark:border-gray-600 text-gray-900;
+
+  svg {
+    @apply fill-gray-600 dark:fill-gray-300;
+
+    height: 20px;
+  }
+
+  input {
+    @apply text-base w-full pl-2 pr-4 py-[0.5rem] rounded-l-none rounded-r-md border border-transparent
+                focus:text-base focus:outline-none transition-colors duration-200
+                dark:bg-gray-700 dark:focus:border-gray-500
+                selection:bg-gray-500 selection:text-gray-200 text-gray-800 dark:text-gray-200;
+
+    &[name="password"] {
+      @apply pr-10 #{!important};
+    }
+  }
+
+  .eye-toggle {
+    @apply absolute right-3 top-[12px];
+
+    svg {
+      @apply h-[18px] fill-gray-500 dark:fill-gray-300 transition-colors duration-150;
+
+      &:hover {
+        @apply fill-gray-700 dark:fill-gray-300;
+      }
+
+      &#eye-close {
+        @apply fill-gray-800 dark:fill-gray-300;
+
+        &:hover {
+          @apply fill-gray-700 dark:fill-gray-200;
+        }
+      }
+    }
+  }
+}
+
+.check-input-container {
+  @apply flex items-center ml-1;
+
+  input {
+    @apply w-4 h-4;
+  }
+
+  label {
+    @apply ml-2 text-sm font-medium text-gray-900 dark:text-gray-300;
+  }
+}

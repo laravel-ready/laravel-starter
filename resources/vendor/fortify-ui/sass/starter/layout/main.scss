@@ -1,0 +1,122 @@
+body {
+  font-family: $font-family-sans-serif;
+  height: 100%;
+  width: 100%;
+
+  @apply bg-white backdrop-blur-md;
+}
+
+// @source: https://tailwindcomponents.com/component/login-form-with-floating-labels
+
+.auth-card-container {
+  @apply flex flex-col justify-center min-h-screen py-6 sm:py-12;
+
+  .auth-card {
+    @apply py-3 relative sm:max-w-xl sm:mx-auto w-[500px];
+
+    &:hover {
+      .backward-card {
+        @apply opacity-80;
+      }
+
+      .front-card {
+        @apply shadow-2xl;
+      }
+    }
+
+    .backward-card {
+      @apply -skew-y-6 absolute bg-gradient-to-r from-blue-300 inset-0
+                shadow-lg sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl to-blue-600
+                transform transition-all duration-150;
+    }
+
+    .front-card {
+      @apply bg-white px-4 py-10 relative shadow-xl sm:rounded-3xl
+                sm:px-12 sm:py-16 dark:bg-gray-800 transition-all duration-150;
+
+      .card-container {
+        @apply max-w-md mx-auto;
+
+        .title {
+          @apply text-center text-gray-900 dark:text-gray-300;
+
+          .form-title {
+            @apply font-semibold mb-2 text-2xl cursor-default;
+          }
+        }
+
+        .splitter-container {
+          @apply h-8 cursor-default;
+
+          .splitter {
+            @apply bg-gray-300 dark:bg-gray-700 h-px my-1 relative;
+
+            .splitter-background {
+              @apply -mt-3 absolute flex justify-center left-0 top-0 w-full;
+
+              span {
+                @apply bg-white dark:bg-gray-700 px-4 text-xs py-1
+                                    text-gray-500 dark:text-gray-300 uppercase;
+              }
+            }
+          }
+        }
+
+        form {
+          @apply leading-6 py-8 sm:text-lg sm:leading-7 space-y-4 text-base text-gray-700;
+
+          min-width: 300px;
+
+          .remember-forgot-row {
+            @apply flex items-center justify-between align-middle mt-2;
+
+            .check-input-container {
+              @apply flex items-start align-middle w-6/12;
+            }
+
+            .forgot-password {
+              @apply text-sm w-6/12;
+            }
+          }
+
+          .btn-link {
+            @apply text-sm hover:text-blue-500 transition-colors duration-200
+                    float-right dark:text-gray-400 dark:hover:text-gray-300
+                    cursor-pointer text-right w-full;
+
+            &.m-top-2 {
+              @apply mt-2;
+            }
+          }
+
+          .submit-button-container {
+            @apply flex flex-row relative;
+
+            button {
+              @apply flex flex-row justify-center items-center space-x-1 bg-blue-500 text-base text-white rounded-[3px] px-4 py-2 mt-5
+                hover:bg-blue-600 transition-all duration-300 w-full;
+
+              &:hover {
+                svg {
+                  @apply fill-white;
+
+                  height: 18px;
+                }
+              }
+
+              &.full-width {
+                @apply w-full;
+              }
+
+              svg {
+                @apply fill-gray-100 transition-all duration-200;
+
+                height: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
