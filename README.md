@@ -12,6 +12,16 @@ Create the project with composer:
 composer create-project laravel-ready/laravel-starter {project_name} --stability=dev
 ```
 
+## To sync with template repo
+
+Run this command
+
+```
+git remote add template https://github.com/laravel-ready/laravel-starter
+git fetch --all
+git merge template/main --allow-unrelated-histories
+```
+
 ## Documentation
 
 You can find the documentation **[here](./DOCS.md).**
