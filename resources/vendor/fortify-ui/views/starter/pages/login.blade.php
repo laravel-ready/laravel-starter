@@ -1,4 +1,4 @@
-@extends('layouts.guest')
+@extends('guest.layouts.layout')
 @section('pageTitle', __('fortify-ui::auth.login'))
 
 @php
