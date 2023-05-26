@@ -1,13 +1,13 @@
-@extends('layouts.app.layout')
+@extends('web.layouts.layout')
 
 @section('content')
     <!--
-            Author: Surjith S M
-            Twitter: @surjithctly
+                Author: Surjith S M
+                Twitter: @surjithctly
 
-            Get more templates on web3templates.com
-            Tailwind Play: https://play.tailwindcss.com/O0fbQqzI8M
-        -->
+                Get more templates on web3templates.com
+                Tailwind Play: https://play.tailwindcss.com/O0fbQqzI8M
+            -->
     <section class="flex items-center justify-center min-h-screen py-24 light:bg-white dark:bg-gray-900">
         <div class="relative flex justify-center py-4 bg-gray-100 items-top dark:bg-gray-900 sm:items-center sm:pt-0">
             @if (Route::has('login'))
