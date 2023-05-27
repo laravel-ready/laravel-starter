@@ -1,33 +1,14 @@
 @extends('web.layouts.layout')
 
 @section('content')
-    <!--
-                Author: Surjith S M
-                Twitter: @surjithctly
+    {{--
+        Author: Surjith S M
+        Twitter: @surjithctly
 
-                Get more templates on web3templates.com
-                Tailwind Play: https://play.tailwindcss.com/O0fbQqzI8M
-            -->
-    <section class="flex items-center justify-center min-h-screen py-24 light:bg-white dark:bg-gray-900">
-        <div class="relative flex justify-center py-4 bg-gray-100 items-top dark:bg-gray-900 sm:items-center sm:pt-0">
-            @if (Route::has('login'))
-                <div class="fixed top-0 right-0 hidden px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}"
-                            class="text-sm text-gray-700 underline dark:text-gray-300 dark:hover:text-gray-100">Home</a>
-                    @else
-                        <a href="{{ route('login') }}"
-                            class="text-sm text-gray-700 underline dark:text-gray-300 dark:hover:text-gray-100">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}"
-                                class="ml-4 text-sm text-gray-700 underline dark:text-gray-300 dark:hover:text-gray-100">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </div>
-
+        Get more templates on web3templates.com
+        Tailwind Play: https://play.tailwindcss.com/O0fbQqzI8M
+    --}}
+    <section class="flex items-center justify-center min-h-screen py-24 mt-10 light:bg-white dark:bg-gray-900">
         <div class="mx-auto max-w-[43rem]">
             <div class="text-center">
                 <p class="text-lg font-medium leading-8 text-indigo-600/95 dark:text-indigo-400/95">
