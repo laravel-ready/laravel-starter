@@ -19,7 +19,7 @@
 	"require": {
 		"php": "^8.1.0",
 		"guzzlehttp/guzzle": "^7.5.0",
-		"laravel-ready/fortify-ui": "^1.0",
+		"laravel-ready/fortify-ui": "v1.0.8",
 		"laravel-ready/hasin": "^v2.1.2",
 		"laravel-ready/model-support": "^1.0",
 		"laravel-ready/readable-numbers": "^1.0",
