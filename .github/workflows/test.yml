@@ -18,7 +18,7 @@ jobs:
                 image: mysql:latest
                 env:
                     MYSQL_ALLOW_EMPTY_PASSWORD: yes
-                    MYSQL_DATABASE: laravel_ready_test
+                    MYSQL_DATABASE: laravel_starter
                 ## map the "external" 33306 port with the "internal" 3306
                 ports:
                     - 3307:3306
@@ -102,7 +102,7 @@ jobs:
               env:
                   DB_CONNECTION: mysql
                   DB_DATABASE: laravel_starter
-                  DB_PORT: 3306
+                  DB_PORT: 3307
                   DB_USER: root
 
               run: php artisan migrate
@@ -117,7 +117,7 @@ jobs:
               # Set environment
               env:
                   DB_CONNECTION: mysql
-                  DB_DATABASE: laravel_ready_test
+                  DB_DATABASE: laravel_starter
                   DB_PORT: 3307
                   DB_USER: root
 
