@@ -101,8 +101,8 @@ jobs:
               # Set environment
               env:
                   DB_CONNECTION: mysql
-                  DB_DATABASE: laravel_ready_test
-                  DB_PORT: 3307
+                  DB_DATABASE: laravel_starter
+                  DB_PORT: 3306
                   DB_USER: root
 
               run: php artisan migrate
