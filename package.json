@@ -11,7 +11,7 @@
 		"vite:preview": "vite preview"
 	},
 	"devDependencies": {
-		"@popperjs/core": "^2.10.2",
+		"@popperjs/core": "^2.11.8",
 		"@vitejs/plugin-vue": "^3.0.1",
 		"axios": "^0.25",
 		"bootstrap": "^5.1.3",
