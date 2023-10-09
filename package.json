@@ -13,7 +13,7 @@
 	"devDependencies": {
 		"@popperjs/core": "^2.10.2",
 		"@vitejs/plugin-vue": "^3.0.1",
-		"axios": "^0.25",
+		"axios": "^1.5",
 		"bootstrap": "^5.1.3",
 		"browser-sync": "^2.29.1",
 		"browser-sync-webpack-plugin": "^2.3.0",
