@@ -166,12 +166,16 @@ This project comes with a docker stack for laravel. It contains: [serversideup/p
 
 `docker-compose.yml` use `.env` file for configurations. So, you need to rename `.env-example` to `.env` and fill it with your own credentials. Then you can run `docker-compose up -d` to start the stack.
 
-## 👍 Suggested Tools
+## 👍 Suggested VS Code Plugins and Tools
 
-- Use [command aliases](https://github.com/relliv/dev-aliases) to save time and make your development environment more comfortable.
+### Plugins
 
-- This project handles multiple terminals on startup with [Terminals Manager](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-terminals). You can configure it in `.vscode/terminals.json` file.
+- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig): syncs our editor configs, required for `.editorconfig` file.
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): common formatter plugin, required for `.prettierrc` file.
+- [Terminals Manager](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-terminals): a terminal manager that automatically launches terminals, required for `.vscode\terminals.json`.
+- [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock): custom theme manager for multiple projects, required for `.vscode\settings.json`.
+- [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker): a minimal docker manager, required for backend and full-stack developers.
 
-- If you are working on multiple projects, you can set accent color for each project with [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock). You can configure it in `.vscode/settings.json` file.
+### Tools
 
-- To consistent workplace, you can use [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) extension.
+- [Command Aliases](https://github.com/relliv/dev-aliases): quick CLI command aliases.
