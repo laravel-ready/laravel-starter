@@ -39,7 +39,7 @@
 ## 🚩 Languages
 
 - en: native/default
-- [tr](https://github.com/EgoistDeveloper/laravel-turkish-translations)
+- [tr](https://github.com/relliv/laravel-turkish-translations)
 
 ## 🔰 Laravel Mix
 
@@ -168,7 +168,7 @@ This project comes with a docker stack for laravel. It contains: [serversideup/p
 
 ## 👍 Suggested Tools
 
-- Use [command aliases](https://github.com/EgoistDeveloper/dev-aliases) to save time and make your development environment more comfortable.
+- Use [command aliases](https://github.com/relliv/dev-aliases) to save time and make your development environment more comfortable.
 
 - This project handles multiple terminals on startup with [Terminals Manager](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-terminals). You can configure it in `.vscode/terminals.json` file.
 
