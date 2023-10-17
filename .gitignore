@@ -19,5 +19,6 @@ yarn-error.log
 resources/views/vendor/**/*
 resources/sass/apps/**/*
 public/mix-manifest.json
-public/mix-manifest.json
-public/mix-manifest.json
+public/js/filament
+public/css/filament
+public/vendor
