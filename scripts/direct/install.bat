@@ -1,10 +1,3 @@
-@REM First installation of apps
-
-@REM ~~~~~~~~ Laravel App ~~~~~~~~
-
-@REM go to backend folder
-cd ../../
-
 @REM install PHP packges
 CALL composer install
 
@@ -18,5 +11,4 @@ CALL php artisan storage:link
 CALL npm i -s
 
 @REM run build scripts
-CALL npm run build
-CALL npm run prod
+CALL npm run vite:build

@@ -1,10 +1,3 @@
-# First installation of apps
-
-# ~~~~~~~~ Laravel App ~~~~~~~~
-
-# go to backend folder
-cd ../../
-
 # install PHP packges
 composer install
 
@@ -18,5 +11,4 @@ php artisan storage:link
 npm i -s
 
 # run build script
-npm run build
-npm run prod
+npm run vite:build
