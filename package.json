@@ -13,7 +13,7 @@
 		"axios": "^1.6.2",
 		"bootstrap": "^5.3.2",
 		"lodash": "^4.17.21",
-		"postcss-import": "^15.1.0",
+		"postcss-import": "^16.0.1",
 		"resolve-url-loader": "^5.0.0",
 		"sass": "^1.69.7",
 		"sass-loader": "^13.3.3",
