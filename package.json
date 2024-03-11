@@ -22,9 +22,9 @@
 	},
 	"dependencies": {
 		"autoprefixer": "^10.4.16",
-		"laravel-vite-plugin": "^0.8.1",
+		"laravel-vite-plugin": "^1.0.2",
 		"postcss": "^8.4.32",
-		"vite": "^4.5.1",
+		"vite": "^5.1.5",
 		"vite-plugin-static-copy": "^0.17.1",
 		"vue-loader": "^17.3.1"
 	}
