@@ -19,7 +19,7 @@
 			"focus": true,
 			"execute": true,
 			"recycle": true,
-			"commands": ["npm run vite:watch"],
+			"commands": ["npm run dev"],
 			"color": "terminal.ansiRed"
 		}
 	]

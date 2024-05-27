@@ -14,6 +14,9 @@ dependencies:
   postcss:
     specifier: ^8.4.38
     version: 8.4.38
+  vite:
+    specifier: ^5.2.11
+    version: 5.2.11(sass@1.77.2)
   vue-loader:
     specifier: ^17.4.2
     version: 17.4.2(vue@3.4.27)(webpack@5.91.0)

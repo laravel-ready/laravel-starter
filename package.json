@@ -1,10 +1,10 @@
 {
 	"private": true,
 	"scripts": {
-		"build": "vite build",
-		"watch": "vite build --watch",
-		"preview": "vite preview"
+		"dev": "vite build --watch",
+		"build": "vite build"
 	},
+	"type": "module",
 	"devDependencies": {
 		"@popperjs/core": "^2.11.8",
 		"@vitejs/plugin-vue": "^5.0.4",
@@ -23,6 +23,7 @@
 		"autoprefixer": "^10.4.19",
 		"laravel-vite-plugin": "^1.0.4",
 		"postcss": "^8.4.38",
+		"vite": "^5.2.11",
 		"vue-loader": "^17.4.2"
 	}
 }
