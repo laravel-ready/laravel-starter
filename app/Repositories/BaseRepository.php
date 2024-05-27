@@ -10,19 +10,11 @@ use Illuminate\Database\Eloquent\Model;
 
 abstract class BaseRepository
 {
-    /**
-     * @var Model
-     */
     protected Model $model;
 
-    /**
-     * @var Application
-     */
     protected Application $app;
 
     /**
-     * @param  Application  $app
-     *
      * @throws \Exception
      */
     public function __construct(Application $app)
@@ -33,22 +25,17 @@ abstract class BaseRepository
 
     /**
      * Get searchable fields array
-     *
-     * @return array
      */
     abstract public function getFieldsSearchable(): array;
 
     /**
      * Configure the Model
-     *
-     * @return string
      */
     abstract public function model(): string;
 
     /**
      * Make Model instance
      *
-     * @return Model
      *
      * @throws \Exception
      */
@@ -65,10 +52,6 @@ abstract class BaseRepository
 
     /**
      * Paginate records for scaffold.
-     *
-     * @param  int  $perPage
-     * @param  array  $columns
-     * @return LengthAwarePaginator
      */
     public function paginate(int $perPage, array $columns = ['*']): LengthAwarePaginator
     {
@@ -79,13 +62,8 @@ abstract class BaseRepository
 
     /**
      * Build a query for retrieving all records.
-     *
-     * @param  array  $search
-     * @param  int|null  $skip
-     * @param  int|null  $limit
-     * @return Builder
      */
-    public function allQuery(array $search = [], int $skip = null, int $limit = null): Builder
+    public function allQuery(array $search = [], ?int $skip = null, ?int $limit = null): Builder
     {
         $query = $this->model->newQuery();
 
@@ -111,13 +89,9 @@ abstract class BaseRepository
     /**
      * Retrieve all records with given filter criteria
      *
-     * @param  array  $search
-     * @param  int|null  $skip
-     * @param  int|null  $limit
-     * @param  array  $columns
      * @return LengthAwarePaginator|Builder[]|Collection
      */
-    public function all(array $search = [], int $skip = null, int $limit = null, array $columns = ['*']): Collection|LengthAwarePaginator|array
+    public function all(array $search = [], ?int $skip = null, ?int $limit = null, array $columns = ['*']): Collection|LengthAwarePaginator|array
     {
         $query = $this->allQuery($search, $skip, $limit);
 
@@ -126,9 +100,6 @@ abstract class BaseRepository
 
     /**
      * Create model record
-     *
-     * @param  array  $input
-     * @return Model
      */
     public function create(array $input): Model
     {
@@ -142,8 +113,6 @@ abstract class BaseRepository
     /**
      * Find model record for given id
      *
-     * @param  int  $id
-     * @param  array  $columns
      * @return Builder|Builder[]|Collection|Model|null
      */
     public function find(int $id, array $columns = ['*']): Model|Collection|Builder|array|null
@@ -156,8 +125,6 @@ abstract class BaseRepository
     /**
      * Update model record for given id
      *
-     * @param  array  $input
-     * @param  int  $id
      * @return Builder|Builder[]|Collection|Model
      */
     public function update(array $input, int $id): Model|Collection|Builder|array
@@ -174,7 +141,6 @@ abstract class BaseRepository
     }
 
     /**
-     * @param  int  $id
      * @return bool|mixed|null
      *
      * @throws \Exception

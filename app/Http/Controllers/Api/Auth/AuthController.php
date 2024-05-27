@@ -18,8 +18,6 @@ class AuthController extends ApiController
     /**
      * Login user with credentials
      *
-     * @param  UserLoginRequest  $request
-     * @return array|Response
      *
      * @throws ValidationException
      */
@@ -67,8 +65,6 @@ class AuthController extends ApiController
     /**
      * Register new user
      *
-     * @param  UserRegisterRequest  $request
-     * @return array|Response
      *
      * @throws ValidationException
      */
@@ -93,9 +89,6 @@ class AuthController extends ApiController
 
     /**
      * Logout on this device
-     *
-     * @param  Request  $request
-     * @return array|Response
      */
     public function logout(Request $request): array|Response
     {
@@ -110,8 +103,6 @@ class AuthController extends ApiController
 
     /**
      * Show authenticated user
-     *
-     * @return Authenticatable|Response
      */
     public function me(): Response|Authenticatable
     {
@@ -121,10 +112,6 @@ class AuthController extends ApiController
     /**
      * Logout on this device
      * This method using for prevent multiple logins on one device
-     *
-     * @param  User  $user
-     * @param  string  $clientUserAgent
-     * @return void
      */
     private function logoutOnThisDevice(User $user, string $clientUserAgent): void
     {
