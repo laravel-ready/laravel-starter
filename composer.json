@@ -40,11 +40,11 @@
 		"dragon-code/pretty-routes": "^3.4.0",
 		"fakerphp/faker": "v1.23.1",
 		"itsgoingd/clockwork": "v5.2.2",
+		"larastan/larastan": "^2.9",
 		"laravel/pint": "v1.16.0",
 		"laravel/sail": "v1.29.2",
 		"mockery/mockery": "^1.6.12",
 		"nunomaduro/collision": "v8.1.1",
-		"nunomaduro/larastan": "v2.9.6",
 		"phpunit/phpunit": "^11.1.3",
 		"spatie/laravel-ray": "^1.36.2"
 	},
