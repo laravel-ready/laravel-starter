@@ -14,16 +14,6 @@
 		},
 
 		{
-			"name": "Webpack Mix Terminal",
-			"description": "Running webpack server",
-			"focus": true,
-			"execute": true,
-			"recycle": true,
-			"commands": ["npm run mix:watch"],
-			"color": "terminal.ansiRed"
-		},
-
-		{
 			"name": "ViteJs Terminal",
 			"description": "Running vite server",
 			"focus": true,

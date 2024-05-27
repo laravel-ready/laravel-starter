@@ -5,8 +5,4 @@ php:
   finder:
     not-name:
       - index.php
-js:
-  finder:
-    not-name:
-      - webpack.mix.js
 css: true
