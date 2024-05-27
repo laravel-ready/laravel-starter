@@ -22,3 +22,7 @@ public/mix-manifest.json
 public/js/filament
 public/css/filament
 public/vendor
+
+// ide helper
+_ide_helper.php
+_ide_helper_models.php

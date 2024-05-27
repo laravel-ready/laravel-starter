@@ -13,7 +13,6 @@ trait StorageTrait
      * @param  object  $file
      * @param  string  $path
      * @param  string  $fileName
-     * @return bool|string
      */
     public function saveFileToDisk($file, $folder, $fileName, $disk = 'public'): bool|string
     {
@@ -32,8 +31,6 @@ trait StorageTrait
      * Get path of local path
      *
      * @param  object  $filePath
-     * @param  string  $disk
-     * @return bool|string
      */
     public function getStoragePath(string $filePath, string $disk = 'public'): bool|string
     {
@@ -47,7 +44,6 @@ trait StorageTrait
      * @param  object  $file
      * @param  string  $path
      * @param  string  $fileName
-     * @return bool|string
      */
     public function moveFileOnDisk(string $filePath, string $newPath, string $disk = 'public'): bool|string
     {
@@ -60,10 +56,6 @@ trait StorageTrait
 
     /**
      * Delete a file from the storage.
-     *
-     * @param  string  $filePath
-     * @param  string  $disk
-     * @return bool
      */
     public function deleteFileFromDisk(string $filePath, string $disk = 'public'): bool
     {
@@ -76,10 +68,6 @@ trait StorageTrait
 
     /**
      * Get a file from the storage.
-     *
-     * @param  string  $filePath
-     * @param  string  $disk
-     * @return string|bool
      */
     public function getFileFromDisk(string $filePath, string $disk = 'public'): string|bool
     {
@@ -93,8 +81,6 @@ trait StorageTrait
     /**
      * Check file exists in the storage.
      *
-     * @param  string  $filePath
-     * @param  string  $disk
      * @return string|bool
      */
     public function fileExists(string $filePath, string $disk = 'public'): bool
@@ -104,11 +90,6 @@ trait StorageTrait
 
     /**
      * Download a file from the storage.
-     *
-     * @param  string  $filePath
-     * @param  string  $fileName
-     * @param  string  $disk
-     * @return StreamedResponse
      */
     public function downloadFileFromDisk(string $filePath, string $fileName, string $disk = 'public'): StreamedResponse
     {

@@ -47,15 +47,12 @@ This project uses [Laravel Mix](https://laravel.com/docs/9.x/mix) to compile the
 
 ### Preinstalled packages
 
-- [browser-sync](https://github.com/Browsersync/browser-sync): Keep multiple browsers & devices in sync when building apps.
-  - First, you must run `php artisan serve` to start the server. Then run `npm run watch` to watch for changes. Browsersync listens to laravel app 8000 port and exposes it to your browser at `localhost:3000` and Browsersync UI `localhost:3001` ports.
-
 ## ⚡ ViteJS
 
 Also this project uses [ViteJS](https://vitejs.io/) to speed up the development process. You can use it to build your project faster.
 
 **Why we are using both of them?**
-> ViteJS is a JavaScript runtime that is optimized for web applications. For example, it is optimized for the Vue.js framework. But if you want to use blade templates, Laravel Mix is still a useful option. Plus, browser-sync is a great solution for smooth development.
+> ViteJS is a JavaScript runtime that is optimized for web applications. For example, it is optimized for the Vue.js framework. But if you want to use blade templates, Laravel Mix is still a useful option.
 
 ## 🎨 Artisan Commands
 

@@ -12,6 +12,7 @@
 			"commands": ["php artisan serve"],
 			"color": "terminal.ansiGreen"
 		},
+
 		{
 			"name": "ViteJs Terminal",
 			"description": "Running vite server",
