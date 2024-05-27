@@ -75,7 +75,7 @@
 		],
 		"post-create-project-cmd": [
 			"@php artisan key:generate --ansi",
-			"npm i"
+			"pnpm i"
 		]
 	},
 	"extra": {
