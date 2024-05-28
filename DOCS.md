@@ -59,44 +59,25 @@ Also this project uses [ViteJS](https://vitejs.io/) to speed up the development 
 <details>
   <summary>Click to see artisan commands</summary>
 
+Serve app
 ```bash
-# serve app
+pas
 
-php artisan serve --port=8000
+# or
+
+php artisan serve
 ```
 
+Create necessary files and model
 ```bash
-# quick start
+# create migrataion, factory, seeder, model, policy, controller, request at once
+php artisan make:model Language/Language -msa
 
-php artisan make:model Folder/ModelName -a
-```
+# create filamet resources at once
+php artisan make:filament-resource Language/Language --generate
 
-```bash
-# quick start
-
-php artisan make:model Folder/ModelName -a
-```
-
-```bash
-# create factory and seeder
-
-php artisan make:factory Folder/ModelNameFactory
-php artisan make:seeder Folder/ModelNameSeeder
-
-
-# then seed the database
+# seed the database
 php artisan db:seed
-
-# or run see specific seeder
-php artisan db:seed --class=Database\Seeders\Folder\SeedTheSeeder
-```
-
-```bash
-# seed for development
-php artisan db:seed --class=DevelopmentSeeder
-
-# seed for production
-php artisan db:seed --class=ProductionSeeder
 ```
 
 ```bash
