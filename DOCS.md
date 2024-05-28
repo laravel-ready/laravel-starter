@@ -41,10 +41,6 @@
 - en: native/default
 - [tr](https://github.com/relliv/laravel-turkish-translations)
 
-## 🔰 Laravel Mix
-
-This project uses [Laravel Mix](https://laravel.com/docs/9.x/mix) to compile the assets.
-
 ### Preinstalled packages
 
 ## ⚡ ViteJS
