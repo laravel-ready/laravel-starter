@@ -37,6 +37,7 @@
 	"require-dev": {
 		"barryvdh/laravel-debugbar": "v3.13.5",
 		"barryvdh/laravel-ide-helper": "v3.0.0",
+		"doctrine/dbal": "^3.8",
 		"dragon-code/pretty-routes": "^3.4.0",
 		"fakerphp/faker": "v1.23.1",
 		"itsgoingd/clockwork": "v5.2.2",
