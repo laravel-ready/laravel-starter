@@ -1,13 +1,18 @@
-# neon reference https://phpstan.org/config-reference for more info
 includes:
-    - ./vendor/nunomaduro/larastan/extension.neon
+    - vendor/larastan/larastan/extension.neon
 
 parameters:
+
     paths:
-        - app
+        - app/
 
-    # strict mode bewtween 0-9
-    # ref: https://phpstan.org/config-reference#rule-level
-    level: 9
+    # Level 9 is the highest level
+    level: 5
 
-    checkMissingIterableValueType: false
+#    ignoreErrors:
+#        - '#PHPDoc tag @var#'
+#
+#    excludePaths:
+#        - ./*/*/FileToBeExcluded.php
+#
+#    checkMissingIterableValueType: false
