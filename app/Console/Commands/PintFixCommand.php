@@ -30,7 +30,7 @@ class PintFixCommand extends Command
 
             $output = shell_exec(base_path('vendor/bin/pint'));
 
-            return $this->info($output);
+            $this->info($output);
         }
     }
 }
