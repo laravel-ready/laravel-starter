@@ -1,54 +1,58 @@
-version: "3.8"
+# Example Prod Environment Setup
+
+version: '3.8'
+
+name: ls_prod
 
 services:
-  # Laravel Starter App
-  laravel_starter_app:
-    image: serversideup/php:8.2-fpm-nginx
-    container_name: laravel_starter_app
-    stdin_open: true
-    tty: true
-    ports:
-      - ${WEB_APP_PORT}:80
-    volumes:
-      - ./:/var/www/html
-    environment:
-      RUN_LARAVEL_AUTOMATIONS: "false"
-      AUTORUN_ENABLED: "true"
-      AUTORUN_LARAVEL_STORAGE_LINK: "false"
-    networks:
-      - mysql_net
-      - redis_net
+    # Laravel Starter App
+    laravel_starter_app:
+        image: serversideup/php:8.2-fpm-nginx
+        container_name: laravel_starter_app
+        stdin_open: true
+        tty: true
+        ports:
+            - ${WEB_APP_PORT}:80
+        volumes:
+            - ./:/var/www/html
+        environment:
+            RUN_LARAVEL_AUTOMATIONS: 'false'
+            AUTORUN_ENABLED: 'true'
+            AUTORUN_LARAVEL_STORAGE_LINK: 'false'
+        networks:
+            - mysql_net
+            - redis_net
 
-  # MySQL
-  laravel_mysql_db:
-    image: mysql:latest
-    container_name: laravel_mysql_db
-    restart: unless-stopped
-    ports:
-      - ${MYSQL_PORT}:3306
-    environment:
-      MYSQL_DATABASE: ${MYSQL_DB}
-      ON_CREATE_DB: ${MYSQL_DB}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    networks:
-      - mysql_net
+    # MySQL
+    laravel_mysql_db:
+        image: mysql:latest
+        container_name: laravel_mysql_db
+        restart: unless-stopped
+        ports:
+            - ${MYSQL_PORT}:3306
+        environment:
+            MYSQL_DATABASE: ${MYSQL_DB}
+            ON_CREATE_DB: ${MYSQL_DB}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        networks:
+            - mysql_net
 
-  # Redis
-  laravel_redis:
-    image: redis:alpine
-    container_name: laravel_redis
-    hostname: laravel_starter_app
-    restart: always
-    ports:
-      - ${LARAVEL_REDIS_POST}:6379
-    networks:
-      - redis_net
+    # Redis
+    laravel_redis:
+        image: redis:alpine
+        container_name: laravel_redis
+        hostname: laravel_starter_app
+        restart: always
+        ports:
+            - ${LARAVEL_REDIS_POST}:6379
+        networks:
+            - redis_net
 
 networks:
-  mysql_net:
-    driver: bridge
+    mysql_net:
+        driver: bridge
 
-  redis_net:
-    driver: bridge
+    redis_net:
+        driver: bridge
