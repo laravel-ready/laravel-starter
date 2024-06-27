@@ -19,6 +19,7 @@ services:
             RUN_LARAVEL_AUTOMATIONS: 'false'
             AUTORUN_ENABLED: 'true'
             AUTORUN_LARAVEL_STORAGE_LINK: 'false'
+            AUTORUN_LARAVEL_MIGRATION: 'true'
             SSL_MODE: 'off'
         networks:
             - db_net
