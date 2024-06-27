@@ -1,0 +1,14 @@
+{
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
+  "recommendations": [
+    "mikestead.dotenv",
+    "ryannaddy.laravel-artisan",
+    "shufo.vscode-blade-formatter",
+    "onecentlin.laravel-blade",
+    "codingyu.laravel-goto-view",
+    "amiralizadeh9480.laravel-extra-intellisense",
+    "naoray.laravel-goto-components",
+    "pgl.laravel-jump-controller",
+    "editorconfig.editorconfig"
+  ]
+}
