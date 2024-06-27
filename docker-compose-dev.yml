@@ -5,62 +5,73 @@ version: '3.8'
 name: ls_dev
 
 services:
-    # Laravel App X
-    laravel_app_x:
-        build:
-            context: ./src
-        container_name: laravel_app_x
-        restart: unless-stopped
+    # Laravel App
+    ls_dev_app:
+        image: serversideup/php:8.2-fpm-nginx
+        container_name: ls_dev_app
+        stdin_open: true
+        tty: true
         ports:
-            - ${LARAVEL_APP_X_PORT}:8000
+            - ${APP_PORT}:8000
         volumes:
-            - ./src:/var/www/html
+            - ./:/var/www/html
         environment:
             RUN_LARAVEL_AUTOMATIONS: 'true'
-        command: php -S laravel_app_x:8000 -t ./public
+            AUTORUN_ENABLED: 'true'
+            AUTORUN_LARAVEL_STORAGE_LINK: 'false'
+            SSL_MODE: 'off'
         networks:
-            - mysql_net
+            - db_net
             - redis_net
+        command: ['su', 'webuser', '-c', 'php artisan schedule:work']
 
-    # MySQL
-    laravel_mysql_db:
+    # Database
+    ls_dev_db:
         image: mysql:latest
-        container_name: laravel_mysql_db
+        container_name: ls_dev_db
         restart: unless-stopped
         ports:
-            - ${MYSQL_PORT}:3306
+            - ${DB_PORT}:3306
         environment:
-            MYSQL_DATABASE: ${MYSQL_DB}
-            ON_CREATE_DB: ${MYSQL_DB}
-            MYSQL_USER: ${MYSQL_USER}
-            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${DB_DATABASE}
+            ON_CREATE_DB: ${DB_DATABASE}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
         networks:
-            - mysql_net
+            - db_net
 
     # Redis
-    laravel_redis:
+    ls_dev_redis:
         image: redis:alpine
-        container_name: laravel_redis
+        container_name: ls_dev_redis
         hostname: laravel_app_x
         restart: always
         ports:
-            - ${LARAVEL_REDIS_POST}:6379
+            - ${REDIS_PORT}:6379
         networks:
             - redis_net
 
     # MailHog Server
-    laravel_mail_hog:
+    ls_dev_mail_hog:
         image: mailhog/mailhog:latest
-        container_name: laravel_mail_hog
+        container_name: ls_dev_mail_hog
         restart: unless-stopped
         ports:
             - 10001:1025
             - 10002:8025
 
 networks:
-    mysql_net:
+    db_net:
         driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.20.0.0/16
 
     redis_net:
         driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.50.0.0/16

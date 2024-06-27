@@ -5,54 +5,64 @@ version: '3.8'
 name: ls_prod
 
 services:
-    # Laravel Starter App
-    laravel_starter_app:
+    # Laravel App
+    ls_prod_app:
         image: serversideup/php:8.2-fpm-nginx
-        container_name: laravel_starter_app
+        container_name: ls_prod_app
         stdin_open: true
         tty: true
         ports:
-            - ${WEB_APP_PORT}:80
+            - ${APP_PORT}:80
         volumes:
             - ./:/var/www/html
         environment:
             RUN_LARAVEL_AUTOMATIONS: 'false'
             AUTORUN_ENABLED: 'true'
             AUTORUN_LARAVEL_STORAGE_LINK: 'false'
+            SSL_MODE: 'off'
         networks:
-            - mysql_net
+            - db_net
             - redis_net
+        command: ['su', 'webuser', '-c', 'php artisan schedule:work']
 
-    # MySQL
-    laravel_mysql_db:
+    # Database
+    ls_prod_db:
         image: mysql:latest
-        container_name: laravel_mysql_db
+        container_name: ls_prod_db
         restart: unless-stopped
         ports:
-            - ${MYSQL_PORT}:3306
+            - ${DB_PORT}:3306
         environment:
-            MYSQL_DATABASE: ${MYSQL_DB}
-            ON_CREATE_DB: ${MYSQL_DB}
-            MYSQL_USER: ${MYSQL_USER}
-            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${DB_DATABASE}
+            ON_CREATE_DB: ${DB_DATABASE}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
         networks:
-            - mysql_net
+            - db_net
 
     # Redis
-    laravel_redis:
+    ls_prod_redis:
         image: redis:alpine
-        container_name: laravel_redis
-        hostname: laravel_starter_app
+        container_name: ls_prod_redis
+        hostname: ls_prod_app
         restart: always
         ports:
-            - ${LARAVEL_REDIS_POST}:6379
+            - ${REDIS_PORT}:6379
         networks:
             - redis_net
 
 networks:
-    mysql_net:
+    db_net:
         driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.10.0.0/16
 
     redis_net:
         driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.40.0.0/16
