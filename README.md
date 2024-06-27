@@ -13,7 +13,7 @@ composer create-project laravel-ready/laravel-starter {project_name} --stability
 ```
 
 > [!WARNING]
-> After installation, if you are using VS Code editor CLI, you need to restart with the `F1` > `Reload Window` command. This is required for indexing and plugin activation.
+> After installation, if you are using VS Code editor CLI, you need to restart with the `F1` (or `Command` + `P`, or `fn` + `F1`) > `Reload Window` command. This is required for indexing and plugin activation.
 
 ## To sync with template repo
 
