@@ -21,8 +21,8 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3(@types/node@20.12.12)(sass@1.77.6)(terser@5.31.0)
       vite-plugin-static-copy:
-        specifier: ^1.0.5
-        version: 1.0.5(vite@5.3.3(@types/node@20.12.12)(sass@1.77.6)(terser@5.31.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@5.3.3(@types/node@20.12.12)(sass@1.77.6)(terser@5.31.0))
       vue-loader:
         specifier: ^17.4.2
         version: 17.4.2(vue@3.4.31)(webpack@5.91.0(webpack-cli@4.10.0))
@@ -3433,8 +3433,8 @@ packages:
   vite-plugin-full-reload@1.1.0:
     resolution: {integrity: sha512-3cObNDzX6DdfhD9E7kf6w2mNunFpD7drxyNgHLw+XwIYAgb+Xt16SEXo0Up4VH+TMf3n+DSVJZtW2POBGcBYAA==}
 
-  vite-plugin-static-copy@1.0.5:
-    resolution: {integrity: sha512-02k0Rox+buYdEOfeilKZSgs1gXfPf9RjVztZEIYZgVIxjsVZi6AXssjzdi+qW6zYt00d3bq+tpP2voVXN2fKLw==}
+  vite-plugin-static-copy@1.0.6:
+    resolution: {integrity: sha512-3uSvsMwDVFZRitqoWHj0t4137Kz7UynnJeq1EZlRW7e25h2068fyIZX4ORCCOAkfp1FklGxJNVJBkBOD+PZIew==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0
@@ -7325,7 +7325,7 @@ snapshots:
       picocolors: 1.0.1
       picomatch: 2.3.1
 
-  vite-plugin-static-copy@1.0.5(vite@5.3.3(@types/node@20.12.12)(sass@1.77.6)(terser@5.31.0)):
+  vite-plugin-static-copy@1.0.6(vite@5.3.3(@types/node@20.12.12)(sass@1.77.6)(terser@5.31.0)):
     dependencies:
       chokidar: 3.6.0
       fast-glob: 3.3.2
