@@ -12,8 +12,8 @@ importers:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.38)
       laravel-vite-plugin:
-        specifier: ^1.0.4
-        version: 1.0.4(vite@5.3.3(@types/node@20.12.12)(sass@1.77.6)(terser@5.31.0))
+        specifier: ^1.0.5
+        version: 1.0.5(vite@5.3.3(@types/node@20.12.12)(sass@1.77.6)(terser@5.31.0))
       postcss:
         specifier: ^8.4.38
         version: 8.4.38
@@ -2287,8 +2287,8 @@ packages:
       webpack: ^5.60.0
       webpack-cli: ^4.9.1
 
-  laravel-vite-plugin@1.0.4:
-    resolution: {integrity: sha512-dEj8Q/Fsn0kKbOQ55bl/NmyJL+dD6OxnVaM/nNByw5XV4b00ky6FzXKVuHLDr4BvSJKH1y6oaOcEG5wKpCZ5+A==}
+  laravel-vite-plugin@1.0.5:
+    resolution: {integrity: sha512-Zv+to82YLBknDCZ6g3iwOv9wZ7f6EWStb9pjSm7MGe9Mfoy5ynT2ssZbGsMr1udU6rDg9HOoYEVGw5Qf+p9zbw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -6153,7 +6153,7 @@ snapshots:
       - uglify-js
       - utf-8-validate
 
-  laravel-vite-plugin@1.0.4(vite@5.3.3(@types/node@20.12.12)(sass@1.77.6)(terser@5.31.0)):
+  laravel-vite-plugin@1.0.5(vite@5.3.3(@types/node@20.12.12)(sass@1.77.6)(terser@5.31.0)):
     dependencies:
       picocolors: 1.0.1
       vite: 5.3.3(@types/node@20.12.12)(sass@1.77.6)(terser@5.31.0)

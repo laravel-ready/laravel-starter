@@ -21,7 +21,7 @@
 	},
 	"dependencies": {
 		"autoprefixer": "^10.4.19",
-		"laravel-vite-plugin": "^1.0.4",
+		"laravel-vite-plugin": "^1.0.5",
 		"postcss": "^8.4.38",
 		"vite": "^5.3.3",
 		"vite-plugin-static-copy": "^1.0.5",
