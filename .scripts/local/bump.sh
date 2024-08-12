@@ -3,5 +3,8 @@
 # check all updates and update them
 npx --yes npm-check-updates --packageManager pnpm --target minor -u
 
-# install dependencies
+# install node dependencies
 pnpm i
+
+# update composer dependencies
+composer update
