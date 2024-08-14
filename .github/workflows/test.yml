@@ -31,18 +31,19 @@ jobs:
               with:
                   node-version: '22.x'
 
+            - name: 📦 Install PNPM
+              run: npm i pnpm -g
+
             - name: 🗃 Cache node_modules directory
               uses: actions/cache@v3
               id: node_modules-cache
               with:
                   path: node_modules
-                  key: ${{ runner.OS }}-build-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
+                  key: ${{ runner.OS }}-node_modules-cache-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
 
             - name: 🚀 Install NPM packages
               if: steps.node_modules-cache.outputs.cache-hit != 'true'
-              run: |
-                  npm i pnpm -g
-                  pnpm i
+              run: pnpm i
 
             - name: 🏗 Build frontend with vite
               run: pnpm build
@@ -71,7 +72,7 @@ jobs:
               id: vendor-cache
               with:
                   path: vendor
-                  key: ${{ runner.OS }}-build-${{ hashFiles('**/composer.lock') }}
+                  key: ${{ runner.OS }}-vendor-${{ hashFiles('**/composer.lock') }}
 
             - name: 📋 Copy .env
               run: php -r "file_exists('.env') || copy('.env.example', '.env');"
