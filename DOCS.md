@@ -156,11 +156,14 @@ You can run github [actions](https://docs.github.com/en/actions/writing-workflow
 Run this command and watch local action steps in your terminals:
 
 ```bash
+# run all
 act -P ubuntu-latest=catthehacker/ubuntu:js-latest --verbose
+
+# run specific workflow
+act -W '.github/workflows/test.yml' -P ubuntu-latest=catthehacker/ubuntu:js-latest --verbose
 ```
 
 When we pushed our repository github will handle with original `ubuntu-latest` image (*also, see [limitations](https://nektosact.com/not_supported.html)*).
-
 
 ## 👍 Suggested VS Code Plugins and Tools
 
