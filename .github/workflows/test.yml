@@ -1,6 +1,4 @@
-# GithHub Actions Workflow generated with Ghygen
-# Original configuration: https://ghygen.hi-folks.dev?code=1fec15baeee2bb6d49973477be9a3023
-name: Laravel Test Application (Mysql)
+name: Overall Application Testing
 on:
     push:
         branches: [main]
@@ -8,129 +6,103 @@ on:
         branches: [main]
 
 jobs:
-    laravel-tests:
+    tests:
         runs-on: ubuntu-latest
-        # Service container Mysql mysql
         services:
-            # Label used to access the service container
             mysql:
-                # Docker Hub image (also with version)
                 image: mysql:latest
                 env:
-                    MYSQL_ALLOW_EMPTY_PASSWORD: yes
+                    # MYSQL_ALLOW_EMPTY_PASSWORD: yes
                     MYSQL_DATABASE: laravel_starter
-                ## map the "external" 33306 port with the "internal" 3306
+                    MYSQL_ROOT_PASSWORD: laravel_starter
                 ports:
-                    - 3307:3306
-                # Set health checks to wait until mysql database has started (it takes some seconds to start)
+                    - 3306:3306
                 options: >-
                     --health-cmd="mysqladmin ping"
                     --health-interval=10s
                     --health-timeout=5s
                     --health-retries=3
 
-        strategy:
-            matrix:
-                operating-system: [ubuntu-latest]
-                php-versions: ['8.2', '8.1']
-                dependency-stability: ['prefer-none']
-
-        name: P${{ matrix.php-versions }} - L${{ matrix.laravel }} - ${{ matrix.dependency-stability }} - ${{ matrix.operating-system}}
-
         steps:
             - uses: actions/checkout@v3
-            - name: Setup Node.js
+              name: 🗂 Checkout code
+
+            - name: 🧩 Setup Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: '18.x'
-            - name: Cache node_modules directory
+                  node-version: '22.x'
+
+            - name: 🗃 Cache node_modules directory
               uses: actions/cache@v3
               id: node_modules-cache
               with:
                   path: node_modules
                   key: ${{ runner.OS }}-build-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
-            - name: Install NPM packages
+
+            - name: 🚀 Install NPM packages
               if: steps.node_modules-cache.outputs.cache-hit != 'true'
-              run: npm ci
+              run: |
+                  npm i pnpm -g
+                  pnpm i
 
-            - name: Build frontend with mix
-              run: npm run mix:prod
+            - name: 🏗 Build frontend with vite
+              run: pnpm build
 
-            - name: Build frontend with vite
-              run: npm run vite:build
-
-            - name: Install PHP versions
+            - name: 🐘 Install PHP
               uses: shivammathur/setup-php@v2
               with:
-                  php-version: ${{ matrix.php-versions }}
-            - name: Get Composer Cache Directory 2
+                  php-version: '8.2'
+
+            - name: 🗄 Get Composer Cache Directory
               id: composer-cache
               run: |
                   echo "::set-output name=dir::$(composer config cache-files-dir)"
-            - uses: actions/cache@v3
+
+            - name: 🗃 Cache Composer dependencies
+              uses: actions/cache@v3
               id: actions-cache
               with:
                   path: ${{ steps.composer-cache.outputs.dir }}
                   key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
                   restore-keys: |
                       ${{ runner.os }}-composer-
-            - name: Cache PHP dependencies
+
+            - name: 🗂 Cache PHP dependencies
               uses: actions/cache@v3
               id: vendor-cache
               with:
                   path: vendor
                   key: ${{ runner.OS }}-build-${{ hashFiles('**/composer.lock') }}
-            - name: Copy .env
+
+            - name: 📋 Copy .env
               run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-            - name: Install Dependencies
-              if: steps.vendor-cache.outputs.cache-hit != 'true'
-              run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
-            - name: Update Dependencies with latest stable
-              if: matrix.dependency-stability == 'prefer-stable'
-              run: composer update --prefer-stable
-            - name: Update Dependencies with lowest stable
-              if: matrix.dependency-stability == 'prefer-lowest'
-              run: composer update --prefer-stable --prefer-lowest
+            - name: 📦 Install Composer Dependencies
+              # if: steps.vendor-cache.outputs.cache-hit != 'true'
+              run: composer install --no-interaction --prefer-dist --no-dev
 
-            - name: Generate key
+            - name: 🔑 Generate key
               run: php artisan key:generate
-            - name: Directory Permissions
+
+            - name: 🔧 Directory Permissions
               run: chmod -R 777 storage bootstrap/cache
-            - name: Run Migrations
-              # Set environment
+
+            - name: 🔄 Run Migrations
               env:
                   DB_CONNECTION: mysql
                   DB_DATABASE: laravel_starter
-                  DB_PORT: 3307
+                  DB_PORT: 3306
                   DB_USER: root
+                  DB_HOST: 127.0.0.1
+                  DB_PASSWORD: laravel_starter
+              run: php artisan migrate:fresh --seed
 
-              run: php artisan migrate
-
-            - name: Show dir
-              run: pwd
-            - name: PHP Version
-              run: php --version
-
-            # Code quality
-            - name: Execute tests (Unit and Feature tests) via PHPUnit
-              # Set environment
+            - name: 🧪 Execute tests (Unit and Feature tests) via PHPUnit
               env:
                   DB_CONNECTION: mysql
                   DB_DATABASE: laravel_starter
-                  DB_PORT: 3307
+                  DB_PORT: 3306
                   DB_USER: root
-
+                  DB_HOST: 127.0.0.1
+                  DB_PASSWORD: laravel_starter
               run: vendor/bin/phpunit --testdox
-
-            - uses: symfonycorp/security-checker-action@v4
-
-            - name: Execute Code Sniffer via phpcs
-              run: |
-                  composer require --dev squizlabs/php_codesniffer
-                  vendor/bin/phpcs --standard=PSR12 app
-
-            - name: Execute Code Static Analysis (PHP Stan + Larastan)
-              run: |
-                  composer require --dev nunomaduro/larastan
-                  vendor/bin/phpstan analyse app -c ./vendor/nunomaduro/larastan/extension.neon  --level=4 --no-progress
