@@ -21,6 +21,7 @@ yarn-error.log
 /.idea
 /public/assets
 **/*.zip
+.phpunit.cache
 
 resources/views/vendor/**/*
 resources/sass/apps/**/*
