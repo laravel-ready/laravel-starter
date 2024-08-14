@@ -31,6 +31,9 @@ jobs:
               with:
                   node-version: '22.x'
 
+            - name: 📦 Install PNPM
+              run: npm i pnpm -g
+
             - name: 🗃 Cache node_modules directory
               uses: actions/cache@v3
               id: node_modules-cache
@@ -40,9 +43,7 @@ jobs:
 
             - name: 🚀 Install NPM packages
               if: steps.node_modules-cache.outputs.cache-hit != 'true'
-              run: |
-                  npm i pnpm -g
-                  pnpm i
+              run: pnpm i
 
             - name: 🏗 Build frontend with vite
               run: pnpm build
