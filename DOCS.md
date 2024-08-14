@@ -146,6 +146,22 @@ This project comes with a docker stack for laravel. It contains: [serversideup/p
 
 `docker-compose.yml` use `.env` file for configurations. So, you need to rename `.env-example` to `.env` and fill it with your own credentials. Then you can run `docker-compose up -d` to start the stack.
 
+## 🔄 Run Github Actions on Your Local
+
+You can run github [actions](https://docs.github.com/en/actions/writing-workflows/quickstart) workflow on your local environment with [Act](https://github.com/nektos/act) app for basic scenarios.
+
+> [!WARNING]  
+> Act is using `catthehacker/ubuntu` images and `ubuntu-latest` image is around ~20GB (after extraction is will be ~60GB). First installation may take long time. To see all image variations check available [tags](https://github.com/catthehacker/docker_images/pkgs/container/ubuntu). To avoid this use lighter images, like `js-latest`.
+
+Run this command and watch local action steps in your terminals:
+
+```bash
+act -P ubuntu-latest=catthehacker/ubuntu:js-latest --verbose
+```
+
+When we pushed our repository github will handle with original `ubuntu-latest` image (*also, see [limitations](https://nektosact.com/not_supported.html)*).
+
+
 ## 👍 Suggested VS Code Plugins and Tools
 
 ### Plugins
