@@ -9,6 +9,7 @@
     "amiralizadeh9480.laravel-extra-intellisense",
     "naoray.laravel-goto-components",
     "pgl.laravel-jump-controller",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "davidanson.vscode-markdownlint"
   ]
 }
