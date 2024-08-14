@@ -1,3 +1,5 @@
+# Laravel Ready Dev Docs
+
 ## 📦 Preinstalled laravel packages
 
 - [pretty-routes](https://github.com/TheDragonCode/pretty-routes): List all routes in one UI.
@@ -11,7 +13,7 @@
 - [spatie/laravel-ignition](https://github.com/spatie/laravel-ignition): Better error page layout. (packageist: *binarytorch/larecipe*)
 
 - [saleem-hadad/larecipe](https://github.com/saleem-hadad/larecipe): Write documentation via Markdown inside your Laravel App.
-  - First, you must run `php artisan larecipe:install` command to publish the needed assets and configurations. 
+  - First, you must run `php artisan larecipe:install` command to publish the needed assets and configurations.
   - Then, Navigate to `/docs` in your browser.
 
 - [laravel/ui](https://github.com/laravel/ui): Ready to use auth views, forms, UI utilities and presets.
@@ -56,6 +58,7 @@ Also this project uses [ViteJS](https://vitejs.io/) to speed up the development 
   <summary>Click to see artisan commands</summary>
 
 Serve app
+
 ```bash
 pas
 
@@ -65,6 +68,7 @@ php artisan serve
 ```
 
 Create necessary files and model
+
 ```bash
 # create migrataion, factory, seeder, model, policy, controller, request at once
 php artisan make:model Language/Language -msa
@@ -84,7 +88,6 @@ composer dump-autoload -o
 
 </details>
 
-
 ## Larastan Commands
 
 To ignore specific lines of code, add the following [comments](https://github.com/nunomaduro/larastan#ignoring-errors) to your code.
@@ -97,6 +100,7 @@ To ignore specific lines of code, add the following [comments](https://github.co
 
 php ./vendor/bin/phpstan analyse --memory-limit=2G --level=9
 ```
+
 </details>
 
 ## ✂️ Pint Commands
@@ -111,6 +115,7 @@ See full config list and examples [here](https://mlocati.github.io/php-cs-fixer-
 
 php ./vendor/bin/pint -v
 ```
+
 </details>
 
 ## 🔬 Pest Commands
@@ -125,11 +130,12 @@ See more examples abouts pesting [here](https://pestphp.com/docs/writing-tests).
 
 php ./vendor/bin/pest
 ```
+
 </details>
 
 ## ⚠️ Commit Messages
 
-- You need to read [commit message guidelines](https://github.com/RomuloOliveira/commit-messages-guide). 
+- You need to read [commit message guidelines](https://github.com/RomuloOliveira/commit-messages-guide).
 - You must use [conventional commits](https://conventionalcommits.org/).
 
 Otherwise, I won't be able to review your commits.
