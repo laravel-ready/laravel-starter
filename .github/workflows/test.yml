@@ -78,7 +78,7 @@ jobs:
 
             - name: 📦 Install Composer Dependencies
               # if: steps.vendor-cache.outputs.cache-hit != 'true'
-              run: composer install --no-interaction --prefer-dist --no-dev
+              run: composer install --no-interaction --prefer-dist
 
             - name: 🔑 Generate key
               run: php artisan key:generate
