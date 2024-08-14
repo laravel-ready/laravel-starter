@@ -12,7 +12,6 @@ jobs:
             mysql:
                 image: mysql:latest
                 env:
-                    # MYSQL_ALLOW_EMPTY_PASSWORD: yes
                     MYSQL_DATABASE: laravel_starter
                     MYSQL_ROOT_PASSWORD: laravel_starter
                 ports:
