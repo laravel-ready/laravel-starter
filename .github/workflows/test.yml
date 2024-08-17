@@ -48,6 +48,21 @@ jobs:
             - name: 🏗 Build frontend with vite
               run: pnpm build
 
+            - name: 🗃 Setup cache environment
+              id: extcache
+              uses: shivammathur/cache-extensions@v1
+              with:
+                  php-version: 8.2
+                  extensions: bcmath
+                  key: php_extensions_cache
+
+            - name: 🗃 Cache extensions
+              uses: actions/cache@v4
+              with:
+                  path: ${{ steps.extcache.outputs.dir }}
+                  key: ${{ steps.extcache.outputs.key }}
+                  restore-keys: ${{ steps.extcache.outputs.key }}
+
             - name: 🐘 Install PHP
               uses: shivammathur/setup-php@v2
               with:
