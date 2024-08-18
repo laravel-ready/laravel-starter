@@ -23,7 +23,7 @@ jobs:
                     --health-retries=3
 
         steps:
-            - name: 🗂 Checkout code
+            - name: 🗂 Checkout Code
               uses: actions/checkout@v4
 
             - name: 🧩 Setup Node.js
@@ -34,7 +34,7 @@ jobs:
             - name: 📦 Install PNPM
               run: npm i pnpm -g
 
-            - name: 🗃 Cache node_modules directory
+            - name: 🗃 Cache node_modules Directory
               uses: actions/cache@v3
               id: node_modules-cache
               with:
@@ -45,10 +45,10 @@ jobs:
               if: steps.node_modules-cache.outputs.cache-hit != 'true'
               run: pnpm i
 
-            - name: 🏗 Build frontend with vite
+            - name: 🏗 Build Frontend with Vite
               run: pnpm build
 
-            - name: 🗃 Setup cache environment
+            - name: 🗃 Setup Cache Environment
               id: extcache
               uses: shivammathur/cache-extensions@v1
               with:
@@ -56,7 +56,7 @@ jobs:
                   extensions: bcmath
                   key: php_extensions_cache
 
-            - name: 🗃 Cache extensions
+            - name: 🗃 Cache Extensions
               uses: actions/cache@v4
               with:
                   path: ${{ steps.extcache.outputs.dir }}
@@ -74,7 +74,7 @@ jobs:
               run: |
                   echo "::set-output name=dir::$(composer config cache-files-dir)"
 
-            - name: 🗃 Cache Composer dependencies
+            - name: 🗃 Cache Composer Dependencies
               uses: actions/cache@v3
               id: actions-cache
               with:
@@ -83,7 +83,7 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-composer-
 
-            - name: 🗂 Cache PHP dependencies
+            - name: 🗂 Cache PHP Dependencies
               uses: actions/cache@v3
               id: vendor-cache
               with:
@@ -97,7 +97,7 @@ jobs:
               # if: steps.vendor-cache.outputs.cache-hit != 'true'
               run: composer install --no-interaction --prefer-dist
 
-            - name: 🔑 Generate key
+            - name: 🔑 Generate App Key
               run: php artisan key:generate
 
             - name: 🔧 Directory Permissions
