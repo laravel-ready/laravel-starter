@@ -35,7 +35,7 @@ jobs:
               run: npm i pnpm -g
 
             - name: 🗃 Cache node_modules Directory
-              uses: actions/cache@v3
+              uses: actions/cache@v4
               id: node_modules-cache
               with:
                   path: node_modules
@@ -75,7 +75,7 @@ jobs:
                   echo "::set-output name=dir::$(composer config cache-files-dir)"
 
             - name: 🗃 Cache Composer Dependencies
-              uses: actions/cache@v3
+              uses: actions/cache@v4
               id: actions-cache
               with:
                   path: ${{ steps.composer-cache.outputs.dir }}
@@ -84,7 +84,7 @@ jobs:
                       ${{ runner.os }}-composer-
 
             - name: 🗂 Cache PHP Dependencies
-              uses: actions/cache@v3
+              uses: actions/cache@v4
               id: vendor-cache
               with:
                   path: vendor
