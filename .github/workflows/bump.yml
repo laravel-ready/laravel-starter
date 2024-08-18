@@ -79,7 +79,7 @@ jobs:
 
             - name: Set up Git user
               run: |
-                  git config --global user.name "${{ github.actor }}"
+                  git config --global user.name "${{ github.actor }}-ci-automation"
                   git config --global user.email "${{ env.GITHUB_GIT_EMAIL }}"
 
             - name: Check for changes
