@@ -1,4 +1,4 @@
-name: Preflight
+name: 'Preflight Tests'
 
 on:
     push:
