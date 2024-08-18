@@ -41,7 +41,7 @@ jobs:
                   path: node_modules
                   key: ${{ runner.OS }}-node_modules-cache-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
 
-            - name: 🚀 Install NPM packages
+            - name: 🚀 Install NPM Packages
               if: steps.node_modules-cache.outputs.cache-hit != 'true'
               run: pnpm i
 
