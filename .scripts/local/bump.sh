@@ -4,7 +4,7 @@
 npx --yes npm-check-updates --packageManager pnpm --target minor -u
 
 # install node dependencies
-pnpm i
+pnpm i --no-frozen-lockfile
 
 # update composer dependencies
 composer update

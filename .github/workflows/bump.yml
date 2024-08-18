@@ -1,0 +1,85 @@
+name: BumpDependencies
+
+on:
+    schedule:
+        - cron: '0 0 * * 1'
+    workflow_dispatch:
+    push:
+        branches: [dev]
+    pull_request:
+        branches: [dev]
+
+jobs:
+    update-deps:
+        if: github.ref == 'refs/heads/dev'
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: 🗂 Checkout Code
+              uses: actions/checkout@v4
+
+            - name: 🧩 Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22.x'
+
+            - name: 📦 Install PNPM
+              run: npm i pnpm -g
+
+            - name: 🗃 Setup Cache Environment
+              id: extcache
+              uses: shivammathur/cache-extensions@v1
+              with:
+                  php-version: 8.2
+                  extensions: bcmath
+                  key: php_extensions_cache
+
+            - name: 🗃 Cache Extensions
+              uses: actions/cache@v4
+              with:
+                  path: ${{ steps.extcache.outputs.dir }}
+                  key: ${{ steps.extcache.outputs.key }}
+                  restore-keys: ${{ steps.extcache.outputs.key }}
+
+            - name: 🐘 Install PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '8.2'
+                  extensions: bcmath
+
+            - name: 🗄 Get Composer Cache Directory
+              id: composer-cache
+              run: |
+                  echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+            - name: 🗃 Cache Composer Dependencies
+              uses: actions/cache@v4
+              id: actions-cache
+              with:
+                  path: ${{ steps.composer-cache.outputs.dir }}
+                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+                  restore-keys: |
+                      ${{ runner.os }}-composer-
+
+            - name: 🗂 Cache PHP Dependencies
+              uses: actions/cache@v4
+              id: vendor-cache
+              with:
+                  path: vendor
+                  key: ${{ runner.OS }}-vendor-${{ hashFiles('**/composer.lock') }}
+
+            - name: 🚀 Bump and Install Dependencies
+              run: |
+                  chmod +x ./.scripts/local/bump.sh
+                  ./.scripts/local/bump.sh
+              shell: bash
+
+            - name: 🏗 Build Frontend with Vite
+              run: pnpm build
+
+            - name: Check for changes
+              run: git diff --quiet || git commit -am "Update dependencies"
+
+            - name: Push changes
+              if: success()
+              run: git push origin HEAD
