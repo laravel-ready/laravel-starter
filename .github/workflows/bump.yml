@@ -77,6 +77,11 @@ jobs:
             - name: 🏗 Build Frontend with Vite
               run: pnpm build
 
+            - name: Set up Git user
+              run: |
+                  git config --global user.name "${{ github.actor }}"
+                  git config --global user.email "${{ env.GITHUB_GIT_EMAIL }}"
+
             - name: Check for changes
               run: git diff --quiet || git commit -am "Update dependencies"
 
