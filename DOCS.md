@@ -157,10 +157,10 @@ Run this command and watch local action steps in your terminals:
 
 ```bash
 # run all
-act act -P ubuntu-latest=catthehacker/ubuntu:js-latest --verbose
+act -P ubuntu-latest=catthehacker/ubuntu:js-latest  --verbose 
 
 # run specific workflow
-act -W '.github/workflows/test.yml' -P ubuntu-latest=catthehacker/ubuntu:js-latest --verbose
+act -P ubuntu-latest=catthehacker/ubuntu:js-latest -W '.github/workflows/preflight.yml' --verbose
 ```
 
 Also, you can manage some [configs](https://nektosact.com/usage/index.html?highlight=.actrc#configuration-file) with [.actrc](./.actrc) file.
