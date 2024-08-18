@@ -1,4 +1,5 @@
-name: Overall Application Testing
+name: Preflight
+
 on:
     push:
         branches: [main]
