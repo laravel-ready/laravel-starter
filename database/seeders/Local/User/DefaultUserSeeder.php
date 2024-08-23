@@ -36,6 +36,7 @@ class DefaultUserSeeder extends Seeder
                 User::create([
                     'email' => $user['email'],
                     'name' => $user['name'],
+                    'email_verified_at' => now(),
                     // 'username' => $user['username'],
                     'password' => Hash::make($user['email']),
                 ]);
