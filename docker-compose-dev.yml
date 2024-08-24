@@ -1,7 +1,5 @@
 # Example Dev Environment Setup
 
-version: '3.8'
-
 name: ls_dev
 
 services:
@@ -20,7 +18,7 @@ services:
             AUTORUN_LARAVEL_MIGRATION: 'true'
             SSL_MODE: 'off'
         networks:
-            - db_net
+            - app_net
             - redis_net
         command: ['su', 'webuser', '-c', 'php artisan schedule:work']
 
@@ -38,7 +36,7 @@ services:
             MYSQL_PASSWORD: ${DB_PASSWORD}
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
         networks:
-            - db_net
+            - app_net
 
     # Redis
     ls_dev_redis:
@@ -61,7 +59,7 @@ services:
             - 10002:8025
 
 networks:
-    db_net:
+    app_net:
         driver: bridge
         ipam:
             driver: default
