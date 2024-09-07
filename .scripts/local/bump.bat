@@ -1,5 +1,6 @@
 @REM update all packages to the latest minor and patch version
 
+@REM ensure PNPM is installed
 CALL pnpm add -g pnpm
 
 @REM check all updates and update them
