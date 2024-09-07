@@ -9,6 +9,7 @@ services:
         container_name: ls_prod_app
         stdin_open: true
         tty: true
+        restart: always
         ports:
             - ${APP_PORT}:80
         volumes:
