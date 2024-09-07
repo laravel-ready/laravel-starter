@@ -29,7 +29,7 @@ services:
         container_name: ls_dev_db
         restart: unless-stopped
         ports:
-            - ${DB_PORT}:3306
+            - 3307:3306
         environment:
             MYSQL_DATABASE: ${DB_DATABASE}
             ON_CREATE_DB: ${DB_DATABASE}
