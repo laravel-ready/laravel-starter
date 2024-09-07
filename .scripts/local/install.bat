@@ -14,4 +14,4 @@ CALL php artisan storage:link
 CALL pnpm i
 
 @REM run docker images
-CALL docker compose -f .\docker-compose-dev.yml up -d
+CALL docker compose -f docker-compose-dev.yml up -d

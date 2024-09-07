@@ -1,3 +1,6 @@
+# copy .env.example as .env
+cp .env.example .env
+
 # install PHP packges
 composer install
 
@@ -8,7 +11,7 @@ php artisan key:generate
 php artisan storage:link
 
 # install NPM packges
-npm i -s
+pnpm i
 
-# run build script
-npm run vite:build
+# run docker images
+docker compose -f docker-compose-dev.yml up -d
