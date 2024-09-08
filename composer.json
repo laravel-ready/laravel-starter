@@ -18,7 +18,7 @@
 	"license": "MIT",
 	"require": {
 		"php": "^8.2",
-		"dutchcodingcompany/filament-developer-logins": "*",
+		"dutchcodingcompany/filament-developer-logins": "^1.2",
 		"fakerphp/faker": "^1.23",
 		"filament/filament": "v3.2.95",
 		"guzzlehttp/guzzle": "^7.9.1",
