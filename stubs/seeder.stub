@@ -12,6 +12,7 @@ class {{ class }} extends Seeder
      */
     public function run(): void
     {
-        //
+        // TODO: update class name and import
+        // {{ class }}::factory()->count(10)->create();
     }
 }
