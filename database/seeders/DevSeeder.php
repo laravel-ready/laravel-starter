@@ -16,6 +16,7 @@ class DevSeeder extends Seeder
     public function run()
     {
         $this->call([
+            // user
             DefaultUserSeeder::class,
             UserSeeder::class,
         ]);
