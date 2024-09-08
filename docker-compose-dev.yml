@@ -7,7 +7,7 @@ services:
     ls_dev_app:
         build:
             context: .
-            dockerfile: Dockerfile
+            dockerfile: ./.docker/local/Dockerfile
         container_name: ls_dev_app
         restart: on-failure
         ports:
@@ -15,8 +15,8 @@ services:
         volumes:
             - ./:/var/www/html
         environment:
-            RUN_LARAVEL_AUTOMATIONS: 'false'
-            AUTORUN_ENABLED: 'false'
+            RUN_LARAVEL_AUTOMATIONS: 'true'
+            AUTORUN_ENABLED: 'true'
             AUTORUN_LARAVEL_STORAGE_LINK: 'true'
             SSL_MODE: 'off'
             PHP_POOL_NAME: 'app_pool'
