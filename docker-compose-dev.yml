@@ -11,20 +11,18 @@ services:
         container_name: ls_dev_app
         restart: on-failure
         ports:
-            - ${APP_PORT}:80
+            - ${APP_PORT}:8080
         volumes:
             - ./:/var/www/html
         environment:
             RUN_LARAVEL_AUTOMATIONS: 'true'
             AUTORUN_ENABLED: 'true'
             AUTORUN_LARAVEL_STORAGE_LINK: 'true'
-            SSL_MODE: 'mixed'
-            PHP_POOL_NAME: 'builder_app_pool'
-            PHP_OPCACHE_ENABLE: '1'
+            AUTORUN_LARAVEL_MIGRATION: 'true'
+            SSL_MODE: 'off'
         networks:
             - app_net
             - redis_net
-        # command: ['su', 'webuser', '-c', 'php artisan schedule:work']
 
     # Database
     ls_dev_db:
