@@ -15,11 +15,12 @@ services:
         volumes:
             - ./:/var/www/html
         environment:
-            RUN_LARAVEL_AUTOMATIONS: 'true'
-            AUTORUN_ENABLED: 'true'
+            RUN_LARAVEL_AUTOMATIONS: 'false'
+            AUTORUN_ENABLED: 'false'
             AUTORUN_LARAVEL_STORAGE_LINK: 'true'
-            AUTORUN_LARAVEL_MIGRATION: 'true'
             SSL_MODE: 'off'
+            PHP_POOL_NAME: 'app_pool'
+            PHP_OPCACHE_ENABLE: '1'
         networks:
             - app_net
             - redis_net
@@ -31,6 +32,8 @@ services:
         restart: unless-stopped
         ports:
             - 3307:3306
+        volumes:
+            - ls_dev_db_volume:/var/lib/mysql
         environment:
             MYSQL_DATABASE: ${DB_DATABASE}
             ON_CREATE_DB: ${DB_DATABASE}
@@ -74,3 +77,6 @@ networks:
             driver: default
             config:
                 - subnet: 10.50.0.0/16
+
+volumes:
+    ls_dev_db_volume:
