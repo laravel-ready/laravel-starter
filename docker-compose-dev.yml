@@ -5,7 +5,9 @@ name: ls_dev
 services:
     # Laravel App
     ls_dev_app:
-        image: serversideup/php:8.2-fpm-nginx
+        build:
+            context: .
+            dockerfile: Dockerfile
         container_name: ls_dev_app
         restart: on-failure
         ports:
@@ -16,12 +18,13 @@ services:
             RUN_LARAVEL_AUTOMATIONS: 'true'
             AUTORUN_ENABLED: 'true'
             AUTORUN_LARAVEL_STORAGE_LINK: 'true'
-            AUTORUN_LARAVEL_MIGRATION: 'true'
-            SSL_MODE: 'off'
+            SSL_MODE: 'mixed'
+            PHP_POOL_NAME: 'builder_app_pool'
+            PHP_OPCACHE_ENABLE: '1'
         networks:
             - app_net
             - redis_net
-        command: ['su', 'webuser', '-c', 'php artisan schedule:work']
+        # command: ['su', 'webuser', '-c', 'php artisan schedule:work']
 
     # Database
     ls_dev_db:
