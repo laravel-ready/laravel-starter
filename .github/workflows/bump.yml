@@ -82,6 +82,7 @@ jobs:
               run: |
                   NEW_BRANCH="update/bump-dependency-versions-$(date +'%d-%m-%Y')"
                   git checkout -b "$NEW_BRANCH"
+                  echo "::set-output name=new_branch::$NEW_BRANCH"
 
             - name: 🔍 Check for changes and commit
               run: |
@@ -89,7 +90,7 @@ jobs:
 
             - name: 🚀 Push changes
               if: success()
-              run: git push origin "$NEW_BRANCH"
+              run: git push origin ${{ steps.create_branch.outputs.new_branch }}
 
             - name: 🔀 Create Pull Request
               uses: repo-sync/pull-request@v2
