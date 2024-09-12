@@ -2,8 +2,7 @@
 
 namespace Database\Seeders;
 
-use Database\Seeders\Local\User\DefaultUserSeeder;
-use Database\Seeders\Local\User\UserSeeder;
+use Database\Seeders\Local\User;
 use Illuminate\Database\Seeder;
 
 class DevSeeder extends Seeder
@@ -16,8 +15,9 @@ class DevSeeder extends Seeder
     public function run()
     {
         $this->call([
-            DefaultUserSeeder::class,
-            UserSeeder::class,
+            // user
+            User\DefaultUserSeeder::class,
+            User\UserSeeder::class,
         ]);
     }
 }

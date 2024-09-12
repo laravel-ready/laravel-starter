@@ -5,22 +5,25 @@ name: ls_dev
 services:
     # Laravel App
     ls_dev_app:
-        image: serversideup/php:8.2-fpm-nginx
+        build:
+            context: .
+            dockerfile: ./.docker/local/Dockerfile
         container_name: ls_dev_app
+        restart: on-failure
         ports:
-            - ${APP_PORT}:80
+            - ${APP_PORT}:8080
         volumes:
             - ./:/var/www/html
         environment:
             RUN_LARAVEL_AUTOMATIONS: 'true'
             AUTORUN_ENABLED: 'true'
             AUTORUN_LARAVEL_STORAGE_LINK: 'true'
-            AUTORUN_LARAVEL_MIGRATION: 'true'
             SSL_MODE: 'off'
+            PHP_POOL_NAME: 'app_pool'
+            PHP_OPCACHE_ENABLE: '1'
         networks:
             - app_net
             - redis_net
-        command: ['su', 'webuser', '-c', 'php artisan schedule:work']
 
     # Database
     ls_dev_db:
@@ -28,7 +31,9 @@ services:
         container_name: ls_dev_db
         restart: unless-stopped
         ports:
-            - ${DB_PORT}:3306
+            - 3307:3306
+        volumes:
+            - ls_dev_db_volume:/var/lib/mysql
         environment:
             MYSQL_DATABASE: ${DB_DATABASE}
             ON_CREATE_DB: ${DB_DATABASE}
@@ -72,3 +77,6 @@ networks:
             driver: default
             config:
                 - subnet: 10.50.0.0/16
+
+volumes:
+    ls_dev_db_volume:

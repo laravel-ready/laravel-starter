@@ -5,12 +5,15 @@ name: ls_prod
 services:
     # Laravel App
     ls_prod_app:
-        image: serversideup/php:8.2-fpm-nginx
+        build:
+            context: .
+            dockerfile: ./.docker/prod/Dockerfile
         container_name: ls_prod_app
         stdin_open: true
         tty: true
+        restart: always
         ports:
-            - ${APP_PORT}:80
+            - ${APP_PORT}:8080
         volumes:
             - ./:/var/www/html
         environment:
@@ -18,7 +21,9 @@ services:
             AUTORUN_ENABLED: 'true'
             AUTORUN_LARAVEL_STORAGE_LINK: 'false'
             AUTORUN_LARAVEL_MIGRATION: 'true'
-            SSL_MODE: 'off'
+            SSL_MODE: 'mixed'
+            PHP_POOL_NAME: 'app_pool'
+            PHP_OPCACHE_ENABLE: '1'
         networks:
             - app_net
             - redis_net

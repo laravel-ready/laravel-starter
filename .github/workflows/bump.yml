@@ -73,28 +73,28 @@ jobs:
             - name: 🏗 Build Frontend with Vite
               run: pnpm build
 
-            - name: Set up Git user
+            - name: 👤 Set up Git user
               run: |
                   git config --global user.name "${{ github.actor }}-ci-automation"
                   git config --global user.email "${{ env.GITHUB_GIT_EMAIL }}"
 
-            - name: Make changes and commit
+            - name: 🌿 Create a new branch
               run: |
-                  DATE=$(date +'%Y-%m-%d')
-                  BRANCH_NAME="bump/deps-${DATE}"
+                  NEW_BRANCH="update/bump-dependency-versions-$(date +'%d-%m-%Y')"
+                  git checkout -b "$NEW_BRANCH"
 
-                  git checkout -b "$BRANCH_NAME"
-                  git add .
-                  git commit -m "Automated update on ${DATE}"
+            - name: 🔍 Check for changes and commit
+              run: |
+                  git diff --quiet || git commit -am "Update dependencies"
 
-            - name: Push changes to a new branch
-              run: git push origin "$BRANCH_NAME"
+            - name: 🚀 Push changes
+              if: success()
+              run: git push origin "$NEW_BRANCH"
 
-            - name: Create a Pull Request
-              uses: peter-evans/create-pull-request@v5
+            - name: 🔀 Create Pull Request
+              uses: repo-sync/pull-request@v2
               with:
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  branch: '$BRANCH_NAME'
-                  base: dev
-                  title: 'Automated Dependency Update on ${DATE}'
-                  body: 'This pull request has been automatically created by GitHub Actions.'
+                  source_branch: ${{ steps.create-branch.outputs.NEW_BRANCH }}
+                  destination_branch: main
+                  pr_title: 'Bump dependencies'
+                  pr_body: 'This PR updates the project dependencies.'
