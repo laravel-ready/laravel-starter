@@ -17,6 +17,6 @@ pnpm i
 docker compose -f docker-compose-dev.yml up -d
 
 # setup project
-docker exec mb_dev_app composer install
-docker exec mb_dev_app php artisan key:generate
-docker exec mb_dev_app php artisan migrate:fresh --seed
+docker exec ls_dev_app composer install
+docker exec ls_dev_app php artisan key:generate
+docker exec ls_dev_app php artisan migrate:fresh --seed

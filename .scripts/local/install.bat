@@ -17,6 +17,6 @@ CALL pnpm i
 CALL docker compose -f docker-compose-dev.yml up -d
 
 @REM setup project
-CALL docker exec mb_dev_app composer install
-CALL docker exec mb_dev_app php artisan key:generate
-CALL docker exec mb_dev_app php artisan migrate:fresh --seed
+CALL docker exec ls_dev_app composer install
+CALL docker exec ls_dev_app php artisan key:generate
+CALL docker exec ls_dev_app php artisan migrate:fresh --seed
