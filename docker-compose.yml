@@ -25,9 +25,9 @@ services:
             PHP_POOL_NAME: 'app_pool'
             PHP_OPCACHE_ENABLE: '1'
         networks:
-            - app_net
-            - redis_net
-        command: ['su', 'webuser', '-c', 'php artisan schedule:work']
+            - ls_prod_app_net
+            - ls_prod_redis_net
+        command: ['php', '/var/www/html/artisan', 'schedule:work']
 
     # Database
     ls_prod_db:
@@ -43,7 +43,7 @@ services:
             MYSQL_PASSWORD: ${DB_PASSWORD}
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
         networks:
-            - app_net
+            - ls_prod_app_net
 
     # Redis
     ls_prod_redis:
@@ -54,17 +54,17 @@ services:
         ports:
             - ${REDIS_PORT}:6379
         networks:
-            - redis_net
+            - ls_prod_redis_net
 
 networks:
-    app_net:
+    ls_prod_app_net:
         driver: bridge
         ipam:
             driver: default
             config:
                 - subnet: 10.10.0.0/16
 
-    redis_net:
+    ls_prod_redis_net:
         driver: bridge
         ipam:
             driver: default
