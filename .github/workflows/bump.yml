@@ -115,7 +115,7 @@ jobs:
                   git commit -m "chore: update dependencies on $DATE" || echo "No changes to commit"
 
                   # Push changes to remote, force with lease for safety
-                  git push --force-with-lease origin $BRANCH_NAME || exit 1
+                  git push --set-upstream origin $BRANCH_NAME || exit 1
 
             - name: 🔀 Create Pull Request
               if: steps.check_changes.outputs.changes == 'true'
