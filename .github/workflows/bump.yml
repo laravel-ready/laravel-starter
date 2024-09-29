@@ -64,6 +64,26 @@ jobs:
                   path: vendor
                   key: ${{ runner.OS }}-vendor-${{ hashFiles('**/composer.lock') }}
 
+            - name: 🛠️ Create branch
+              id: create_branch
+              run: |
+                  DATE=$(date +'%Y-%m-%d')
+                  BRANCH_NAME="update/update-deps-$DATE"
+
+                  # Check if branch exists and create or switch to it
+                  if git ls-remote --exit-code --heads origin $BRANCH_NAME; then
+                    echo "Branch $BRANCH_NAME already exists on remote."
+                    git fetch origin $BRANCH_NAME
+                    git checkout $BRANCH_NAME
+                    git reset --hard origin/$BRANCH_NAME
+                  else
+                    echo "Creating branch $BRANCH_NAME."
+                    git checkout -b $BRANCH_NAME
+                  fi
+
+                  # Output the branch name for use in the next steps
+                  echo "new_branch=$BRANCH_NAME" >> $GITHUB_ENV
+
             - name: 🚀 Bump and Install Dependencies
               run: |
                   chmod +x ./.scripts/local/bump.sh
@@ -73,29 +93,32 @@ jobs:
             - name: 🏗 Build Frontend with Vite
               run: pnpm build
 
+            - name: 🧪 Check Changes
+              id: check_changes
+              run: |
+                  git diff --exit-code && echo "changes=false" >> $GITHUB_OUTPUT || echo "changes=true" >> $GITHUB_OUTPUT
+
             - name: 👤 Set up Git user
+              if: steps.check_changes.outputs.changes == 'true'
               run: |
                   git config --global user.name "${{ github.actor }}-ci-automation"
                   git config --global user.email "${{ env.GITHUB_GIT_EMAIL }}"
 
-            - name: 🌿 Create a new branch
+            - name: 🛠️ Add changes to commit
+              if: steps.check_changes.outputs.changes == 'true'
+              id: update-branch
               run: |
-                  NEW_BRANCH="update/bump-dependency-versions-$(date +'%d-%m-%Y')"
-                  git checkout -b "$NEW_BRANCH"
-                  echo "::set-output name=new_branch::$NEW_BRANCH"
+                  DATE=$(date +'%Y-%m-%d')
 
-            - name: 🔍 Check for changes and commit
-              run: |
-                  git diff --quiet || git commit -am "Update dependencies"
+                  # Add changes to commit
+                  git add composer.lock package.json pnpm-lock.yaml
+                  git commit -m "chore: update dependencies on $DATE" || echo "No changes to commit"
 
-            - name: 🚀 Push changes
-              if: success()
-              run: git push origin ${{ steps.create_branch.outputs.new_branch }}
+                  # Push changes to remote, force with lease for safety
+                  git push --force-with-lease origin $BRANCH_NAME || exit 1
 
             - name: 🔀 Create Pull Request
-              uses: repo-sync/pull-request@v2
-              with:
-                  source_branch: ${{ steps.create-branch.outputs.NEW_BRANCH }}
-                  destination_branch: main
-                  pr_title: 'Bump dependencies'
-                  pr_body: 'This PR updates the project dependencies.'
+              if: steps.check_changes.outputs.changes == 'true'
+              run: gh pr create -B main --title "Update dependencies" --body "Created by Github action"
+              env:
+                  GITHUB_TOKEN: ${{ secrets.ACTION_WORKFLOW_GITHUB_TOKEN }}
