@@ -113,7 +113,7 @@ jobs:
 
                   # Add changes to commit
                   git add composer.lock package.json pnpm-lock.yaml
-                  git commit -m "chore: update dependencies on $DATE" || echo "No changes to commit"
+                  git commit -m "Chore: update dependencies on $DATE" || echo "No changes to commit"
 
                   # Push changes to remote, force with lease for safety
                   git push --set-upstream origin $BRANCH_NAME || exit 1
