@@ -933,16 +933,16 @@
         },
         {
             "name": "bacon/bacon-qr-code",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Bacon/BaconQrCode.git",
-                "reference": "510de6eca6248d77d31b339d62437cc995e2fb41"
+                "reference": "f9cc1f52b5a463062251d666761178dbdb6b544f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/510de6eca6248d77d31b339d62437cc995e2fb41",
-                "reference": "510de6eca6248d77d31b339d62437cc995e2fb41",
+                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/f9cc1f52b5a463062251d666761178dbdb6b544f",
+                "reference": "f9cc1f52b5a463062251d666761178dbdb6b544f",
                 "shasum": ""
             },
             "require": {
@@ -981,9 +981,9 @@
             "homepage": "https://github.com/Bacon/BaconQrCode",
             "support": {
                 "issues": "https://github.com/Bacon/BaconQrCode/issues",
-                "source": "https://github.com/Bacon/BaconQrCode/tree/v3.0.0"
+                "source": "https://github.com/Bacon/BaconQrCode/tree/v3.0.1"
             },
-            "time": "2024-04-18T11:16:25+00:00"
+            "time": "2024-10-01T13:55:55+00:00"
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -4878,16 +4878,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.5.8",
+            "version": "v3.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "ce1ce71b39a3492b98f7d2f2a4583f1b163fe6ae"
+                "reference": "d04a229058afa76116d0e39209943a8ea3a7f888"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/ce1ce71b39a3492b98f7d2f2a4583f1b163fe6ae",
-                "reference": "ce1ce71b39a3492b98f7d2f2a4583f1b163fe6ae",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/d04a229058afa76116d0e39209943a8ea3a7f888",
+                "reference": "d04a229058afa76116d0e39209943a8ea3a7f888",
                 "shasum": ""
             },
             "require": {
@@ -4895,7 +4895,7 @@
                 "illuminate/routing": "^10.0|^11.0",
                 "illuminate/support": "^10.0|^11.0",
                 "illuminate/validation": "^10.0|^11.0",
-                "laravel/prompts": "^0.1.24",
+                "laravel/prompts": "^0.1.24|^0.2|^0.3",
                 "league/mime-type-detection": "^1.9",
                 "php": "^8.1",
                 "symfony/console": "^6.0|^7.0",
@@ -4942,7 +4942,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.5.8"
+                "source": "https://github.com/livewire/livewire/tree/v3.5.9"
             },
             "funding": [
                 {
@@ -4950,7 +4950,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-09-20T19:41:19+00:00"
+            "time": "2024-10-01T12:40:06+00:00"
         },
         {
             "name": "masterminds/html5",
