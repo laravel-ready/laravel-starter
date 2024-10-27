@@ -13,16 +13,16 @@ importers:
         version: 10.4.20(postcss@8.4.47)
       laravel-vite-plugin:
         specifier: ^1.0.5
-        version: 1.0.5(vite@5.4.9(@types/node@20.12.12)(sass@1.80.3)(terser@5.31.0))
+        version: 1.0.5(vite@5.4.10(@types/node@20.12.12)(sass@1.80.4)(terser@5.31.0))
       postcss:
         specifier: ^8.4.47
         version: 8.4.47
       vite:
-        specifier: ^5.4.9
-        version: 5.4.9(@types/node@20.12.12)(sass@1.80.3)(terser@5.31.0)
+        specifier: ^5.4.10
+        version: 5.4.10(@types/node@20.12.12)(sass@1.80.4)(terser@5.31.0)
       vite-plugin-static-copy:
         specifier: ^1.0.6
-        version: 1.0.6(vite@5.4.9(@types/node@20.12.12)(sass@1.80.3)(terser@5.31.0))
+        version: 1.0.6(vite@5.4.10(@types/node@20.12.12)(sass@1.80.4)(terser@5.31.0))
       vue-loader:
         specifier: ^17.4.2
         version: 17.4.2(vue@3.5.12)(webpack@5.91.0)
@@ -32,7 +32,7 @@ importers:
         version: 2.11.8
       '@vitejs/plugin-vue':
         specifier: ^5.1.4
-        version: 5.1.4(vite@5.4.9(@types/node@20.12.12)(sass@1.80.3)(terser@5.31.0))(vue@3.5.12)
+        version: 5.1.4(vite@5.4.10(@types/node@20.12.12)(sass@1.80.4)(terser@5.31.0))(vue@3.5.12)
       axios:
         specifier: ^1.7.7
         version: 1.7.7
@@ -52,11 +52,11 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
       sass:
-        specifier: ^1.80.3
-        version: 1.80.3
+        specifier: ^1.80.4
+        version: 1.80.4
       sass-loader:
         specifier: ^14.2.1
-        version: 14.2.1(sass@1.80.3)(webpack@5.91.0)
+        version: 14.2.1(sass@1.80.4)(webpack@5.91.0)
       tailwindcss:
         specifier: ^3.4.14
         version: 3.4.14
@@ -3186,8 +3186,8 @@ packages:
       webpack:
         optional: true
 
-  sass@1.80.3:
-    resolution: {integrity: sha512-ptDWyVmDMVielpz/oWy3YP3nfs7LpJTHIJZboMVs8GEC9eUmtZTZhMHlTW98wY4aEorDfjN38+Wr/XjskFWcfA==}
+  sass@1.80.4:
+    resolution: {integrity: sha512-rhMQ2tSF5CsuuspvC94nPM9rToiAFw2h3JTrLlgmNw1MH79v8Cr3DH6KF6o6r+8oofY3iYVPUf66KzC8yuVN1w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -3545,8 +3545,8 @@ packages:
     peerDependencies:
       vite: ^5.0.0
 
-  vite@5.4.9:
-    resolution: {integrity: sha512-20OVpJHh0PAM0oSOELa5GaZNWeDjcAvQjGXy2Uyr+Tp+/D2/Hdz6NLgpJLsarPTA2QJ6v8mX2P1ZfbsSKvdMkg==}
+  vite@5.4.10:
+    resolution: {integrity: sha512-1hvaPshuPUtxeQ0hsVH3Mud0ZanOLwVTneA1EgbAM5LhaZEqyPWGRQ7BtaMvUrTDeEaC8pxtj6a6jku3x4z6SQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -4865,9 +4865,9 @@ snapshots:
     dependencies:
       '@types/node': 20.12.12
 
-  '@vitejs/plugin-vue@5.1.4(vite@5.4.9(@types/node@20.12.12)(sass@1.80.3)(terser@5.31.0))(vue@3.5.12)':
+  '@vitejs/plugin-vue@5.1.4(vite@5.4.10(@types/node@20.12.12)(sass@1.80.4)(terser@5.31.0))(vue@3.5.12)':
     dependencies:
-      vite: 5.4.9(@types/node@20.12.12)(sass@1.80.3)(terser@5.31.0)
+      vite: 5.4.10(@types/node@20.12.12)(sass@1.80.4)(terser@5.31.0)
       vue: 3.5.12
 
   '@vue/compiler-core@3.5.12':
@@ -6331,10 +6331,10 @@ snapshots:
       - uglify-js
       - utf-8-validate
 
-  laravel-vite-plugin@1.0.5(vite@5.4.9(@types/node@20.12.12)(sass@1.80.3)(terser@5.31.0)):
+  laravel-vite-plugin@1.0.5(vite@5.4.10(@types/node@20.12.12)(sass@1.80.4)(terser@5.31.0)):
     dependencies:
       picocolors: 1.0.1
-      vite: 5.4.9(@types/node@20.12.12)(sass@1.80.3)(terser@5.31.0)
+      vite: 5.4.10(@types/node@20.12.12)(sass@1.80.4)(terser@5.31.0)
       vite-plugin-full-reload: 1.1.0
 
   launch-editor@2.6.1:
@@ -7097,14 +7097,14 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sass-loader@14.2.1(sass@1.80.3)(webpack@5.91.0):
+  sass-loader@14.2.1(sass@1.80.4)(webpack@5.91.0):
     dependencies:
       neo-async: 2.6.2
     optionalDependencies:
-      sass: 1.80.3
+      sass: 1.80.4
       webpack: 5.91.0(webpack-cli@4.10.0)
 
-  sass@1.80.3:
+  sass@1.80.4:
     dependencies:
       '@parcel/watcher': 2.4.1
       chokidar: 4.0.1
@@ -7512,15 +7512,15 @@ snapshots:
       picocolors: 1.0.1
       picomatch: 2.3.1
 
-  vite-plugin-static-copy@1.0.6(vite@5.4.9(@types/node@20.12.12)(sass@1.80.3)(terser@5.31.0)):
+  vite-plugin-static-copy@1.0.6(vite@5.4.10(@types/node@20.12.12)(sass@1.80.4)(terser@5.31.0)):
     dependencies:
       chokidar: 3.6.0
       fast-glob: 3.3.2
       fs-extra: 11.2.0
       picocolors: 1.0.1
-      vite: 5.4.9(@types/node@20.12.12)(sass@1.80.3)(terser@5.31.0)
+      vite: 5.4.10(@types/node@20.12.12)(sass@1.80.4)(terser@5.31.0)
 
-  vite@5.4.9(@types/node@20.12.12)(sass@1.80.3)(terser@5.31.0):
+  vite@5.4.10(@types/node@20.12.12)(sass@1.80.4)(terser@5.31.0):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.47
@@ -7528,7 +7528,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 20.12.12
       fsevents: 2.3.3
-      sass: 1.80.3
+      sass: 1.80.4
       terser: 5.31.0
 
   vm-browserify@1.1.2: {}
