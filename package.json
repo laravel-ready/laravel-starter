@@ -7,7 +7,7 @@
 	"type": "module",
 	"devDependencies": {
 		"@popperjs/core": "^2.11.8",
-		"@vitejs/plugin-vue": "^5.1.4",
+		"@vitejs/plugin-vue": "^5.1.5",
 		"axios": "^1.7.7",
 		"bootstrap": "^5.3.3",
 		"laravel-mix": "^6.0.49",
@@ -22,8 +22,8 @@
 	"dependencies": {
 		"autoprefixer": "^10.4.20",
 		"laravel-vite-plugin": "^1.0.5",
-		"postcss": "^8.4.47",
-		"vite": "^5.4.10",
+		"postcss": "^8.4.49",
+		"vite": "^5.4.11",
 		"vite-plugin-static-copy": "^1.0.6",
 		"vue-loader": "^17.4.2"
 	}
