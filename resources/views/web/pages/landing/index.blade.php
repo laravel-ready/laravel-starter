@@ -40,19 +40,6 @@
 
                     Go to Github Repo
                 </a>
-
-                @if (config('app.env') !== 'production' && str()->contains(url()->current(), 'localhost'))
-                    <a href="{{ 'http://localhost:3000' }}"
-                        class="flex flex-row px-5 py-3 space-x-2 font-medium transition-colors transform border rounded-md light:border-slate-200 text-slate-900 hover:bg-slate-50 group dark:bg-gray-400 dark:hover:bg-gray-300 dark:border-gray-900">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-                            width="24" height="24" viewBox="0 0 24 24" class="mr-2 group-hover:fill-indigo-600">
-                            <path
-                                d="M12 3.2C12 3.2 6 10 6 14C6 17.3 8.7 20 12 20S18 17.3 18 14C18 10 12 3.2 12 3.2M12 8.5V10C14.2 10 16 11.8 16 14C16 14.8 15.8 15.6 15.3 16.2L14.2 15.1C14.4 14.8 14.5 14.4 14.5 14C14.5 12.6 13.4 11.5 12 11.5V13L9.8 10.8L12 8.5M8.7 11.8L9.8 12.9C9.6 13.2 9.5 13.6 9.5 14C9.5 15.4 10.6 16.5 12 16.5V15L14.2 17.2L12 19.5V18C9.8 18 8 16.2 8 14C8 13.2 8.2 12.4 8.7 11.8Z" />
-                        </svg>
-
-                        Open Browser Sync
-                    </a>
-                @endif
             </div>
         </div>
     </section>
