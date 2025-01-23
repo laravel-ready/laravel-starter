@@ -14,16 +14,16 @@
 		"lodash": "^4.17.21",
 		"postcss-import": "^16.1.0",
 		"resolve-url-loader": "^5.0.0",
-		"sass": "^1.83.0",
+		"sass": "^1.83.4",
 		"sass-loader": "^14.2.1",
 		"tailwindcss": "^3.4.17",
 		"vue": "^3.5.13"
 	},
 	"dependencies": {
 		"autoprefixer": "^10.4.20",
-		"laravel-vite-plugin": "^1.1.1",
-		"postcss": "^8.4.49",
-		"vite": "^5.4.11",
+		"laravel-vite-plugin": "^1.2.0",
+		"postcss": "^8.5.1",
+		"vite": "^5.4.14",
 		"vite-plugin-static-copy": "^1.0.6",
 		"vue-loader": "^17.4.2"
 	}
